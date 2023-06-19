@@ -31,11 +31,11 @@ const Footer = () => {
           <div className="footer_links">
             <a href="">О Valve |</a>
             <a href="">Вакансии |</a>
-            <a href="">Steamworks</a>
-            <a href=""> Дистрибуция Steam </a>
-            <a href=""> Служба поддержки</a>
-            <a href="">Подарочные карты</a>
-            <a href="">Steam</a>
+            <a href="">Steamworks |</a>
+            <a href=""> Дистрибуция Steam |</a>
+            <a href=""> Служба поддержки |</a>
+            <a href="">Подарочные карты |</a>
+            <a href="">Steam |</a>
             <a href="">@steam</a>
           </div>
         </div>
