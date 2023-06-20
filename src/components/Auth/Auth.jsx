@@ -12,6 +12,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
@@ -74,11 +75,11 @@ export default function Auth() {
             marginTop: 8,
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
+            // alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
-            <LockOutlinedIcon />
+          <Avatar sx={{ m: 1, bgcolor: "black" }}>
+            <AccountCircleOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             {hasAccount ? "Login Form" : "Register Form"}

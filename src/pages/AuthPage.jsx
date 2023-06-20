@@ -1,5 +1,5 @@
 import React from "react";
-import Auth from "../components/auth/Auth";
+import Auth from "../components/Auth/Auth";
 
 const AuthPage = () => {
   return (
