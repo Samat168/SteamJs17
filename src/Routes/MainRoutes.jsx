@@ -4,6 +4,7 @@ import AdminPage from "../pages/AdminPage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ProductPage from "../pages/ProductPage";
 import { Route, Routes } from "react-router-dom";
+import EditProductPage from "../pages/EditProductPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -27,6 +28,11 @@ const MainRoutes = () => {
       link: "/products",
       element: <ProductPage />,
       id: 4,
+    },
+    {
+      link: "/edit/:id",
+      element: <EditProductPage />,
+      id: 5,
     },
   ];
 
