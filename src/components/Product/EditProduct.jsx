@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import CategorySelect from "./CategorySelect";
+import { useParams } from "react-router-dom";
 
-const AddProduct = () => {
+const EditProduct = () => {
   const [product, setProduct] = useState({
     title: "",
     desc: "",
@@ -15,7 +16,20 @@ const AddProduct = () => {
     price: 0,
     category: "",
   });
-  const { addProduct } = useProducts();
+  const { saveEditedProduct, getProductDetails, productDetails } =
+    useProducts();
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    getProductDetails(id);
+  }, []);
+
+  useEffect(() => {
+    if (productDetails) {
+      setProduct(productDetails);
+    }
+  }, [productDetails]);
 
   const handleInp = (e) => {
     if (e.target.name === "price") {
@@ -33,21 +47,6 @@ const AddProduct = () => {
     }
   };
 
-  const handleAddProduct = () => {
-    addProduct(product);
-    setProduct({
-      title: "",
-      desc: "",
-      pic1: "",
-      pic2: "",
-      pic3: "",
-      pic4: "",
-      video: "",
-      price: 0,
-      category: "",
-    });
-  };
-
   return (
     <Box sx={{ paddingBottom: "3%" }}>
       <Typography
@@ -61,7 +60,7 @@ const AddProduct = () => {
         variant="h4"
         align="center"
       >
-        ADMIN PANEL
+        EDIT PAGE
       </Typography>
       <Box
         sx={{
@@ -198,13 +197,13 @@ const AddProduct = () => {
                 color: "white",
               },
             }}
-            onClick={handleAddProduct}
+            onClick={() => saveEditedProduct(product)}
             fullWidth
             variant="outlined"
             size="large"
             className="admin__button"
           >
-            ADD PRODUCT
+            SAVE CHANGES
           </Button>
         </Box>
       </Box>
@@ -212,4 +211,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default EditProduct;
