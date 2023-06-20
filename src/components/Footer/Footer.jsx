@@ -11,6 +11,7 @@ const Footer = () => {
               alt=""
               className="footer_logo1"
             />
+
             <img
               src="https://store.akamai.steamstatic.com/public/images/v6/logo_steam_footer.png"
               alt=""
@@ -29,14 +30,20 @@ const Footer = () => {
             </p>
           </div>
           <div className="footer_links">
-            <a href="">О Valve |</a>
-            <a href="">Вакансии |</a>
-            <a href="">Steamworks</a>
-            <a href=""> Дистрибуция Steam </a>
-            <a href=""> Служба поддержки</a>
-            <a href="">Подарочные карты</a>
-            <a href="">Steam</a>
-            <a href="">@steam</a>
+            <a href="https://www.valvesoftware.com/ru/about">О Valve | </a>
+            <a href="https://www.valvesoftware.com/ru/">Вакансии | </a>
+            <a href="https://partner.steamgames.com/">Steamworks | </a>
+            <a href="https://partner.steamgames.com/steamdirect">
+              Дистрибуция Steam |
+            </a>
+            <a href="https://help.steampowered.com/ru/?snr=1_44_44_">
+              Служба поддержки |
+            </a>
+            <a href="https://store.steampowered.com/digitalgiftcards/">
+              Подарочные карты |
+            </a>
+            <a href="https://www.facebook.com/Steam">Steam | </a>
+            <a href="https://twitter.com/steam">@steam </a>
           </div>
         </div>
       </div>

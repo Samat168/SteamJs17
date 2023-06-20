@@ -1,3 +1,52 @@
 {
-  "Products": []
+  "products": [
+    {
+      "title": "CS GO SOURCE",
+      "desc": "",
+      "pic1": "dfd",
+      "pic2": "dfdfd",
+      "pic3": "dfdfd",
+      "pic4": "",
+      "video": "",
+      "price": 222,
+      "category": "Шутеры",
+      "id": 1
+    },
+    {
+      "title": "sfs",
+      "desc": "sdsf",
+      "pic1": "sfs",
+      "pic2": "sfs",
+      "pic3": "sfs",
+      "pic4": "sfs",
+      "video": "sfs",
+      "price": 22222,
+      "category": "Гонки",
+      "id": 2
+    },
+    {
+      "title": "sfs",
+      "desc": "sfs",
+      "pic1": "sfs",
+      "pic2": "sfs",
+      "pic3": "sfs",
+      "pic4": "sfs",
+      "video": "sfs",
+      "price": 2222222,
+      "category": "Экшены",
+      "id": 3
+    },
+    {
+      "title": "sfs",
+      "desc": "sfs",
+      "pic1": "sfs",
+      "pic2": "sfs",
+      "pic3": "sfs",
+      "pic4": "sfs",
+      "video": "sfs",
+      "price": 333,
+      "category": "Экшены",
+      "id": 4
+    }
+  ]
 }
