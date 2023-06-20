@@ -104,9 +104,6 @@ const AuthContextProvider = ({ children }) => {
     setPasword,
     setHasAccount,
 
-    clearInputs,
-    clearErrors,
-
     handleSignUp,
     handleLogin,
     handleLogout,
