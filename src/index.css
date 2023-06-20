@@ -12,8 +12,19 @@ ul,
 ol {
   list-style-type: none;
 }
-
+input {
+  padding-left: 10px;
+}
 body {
   background: rgb(1, 99, 138);
   background: linear-gradient(to right, #1b2838, #435771);
+}
+input:hover {
+  cursor: inherit;
+}
+button:hover {
+  cursor: pointer;
+}
+a:hover {
+  cursor: pointer;
 }
