@@ -2,11 +2,11 @@
   "products": [
     {
       "title": "CS GO SOURCE",
-      "desc": "",
+      "desc": "В игре Call of Duty®: Modern Warfare® II игроков ожидает беспрецедентный глобальный конфликт с участием легендарных исполнителей из ОТГ-141.",
       "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/1150440/header.jpg?t=1687214098",
-      "pic2": "dfdfd",
-      "pic3": "dfdfd",
-      "pic4": "",
+      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_69daadf0ed608ae40e57c520d60e6d38e14dffe9.600x338.jpg?t=1686759791",
+      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_ecd2d05c58a778031c1533c1356fa63891839e0a.600x338.jpg?t=1686759791",
+      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_da11f26c8fec6def6e235786e11b868eb8b115ef.116x65.jpg?t=1686759791",
       "video": "",
       "price": 222,
       "category": "Шутеры",
