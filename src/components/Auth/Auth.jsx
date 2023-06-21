@@ -16,6 +16,7 @@ import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined
 
 import { Navigate, useNavigate } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import { colors } from "@mui/material";
 
 function Copyright(props) {
   return (
@@ -78,10 +79,12 @@ export default function Auth() {
             // alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: "black" }}>
-            <AccountCircleOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
+          <img
+            src="https://store.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+            alt=""
+            style={{ width: "200px", marginLeft: "30%", marginBottom: "7%" }}
+          ></img>
+          <Typography component="h1" variant="h5" sx={{ color: "white" }}>
             {hasAccount ? "Login Form" : "Register Form"}
           </Typography>
           <Box
@@ -105,6 +108,7 @@ export default function Auth() {
               helperText={emailError}
             />
             <TextField
+              sx={{ backgroundColor: "white", borderRadius: "5px" }}
               margin="normal"
               required
               fullWidth
@@ -123,7 +127,12 @@ export default function Auth() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  background:
+                    "linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%)",
+                }}
                 onClick={() => {
                   handleLogin();
                 }}
@@ -135,7 +144,12 @@ export default function Auth() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  background:
+                    "linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%)",
+                }}
                 onClick={() => {
                   handleSignUp();
                 }}
