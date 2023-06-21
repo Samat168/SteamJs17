@@ -70,35 +70,42 @@ const AddProduct = () => {
           padding: "5% 5%",
         }}
       >
+        <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+          <Typography>Название</Typography>
+          <Typography>Описание</Typography>
+        </Box>
+        <Box sx={{ display: "flex" }}>
+          <TextField
+            sx={{
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+              borderRadius: "5px",
+              marginBottom: "20px",
+            }}
+            fullWidth
+            onChange={handleInp}
+            name="title"
+            label="title"
+            variant="outlined"
+            value={product.title}
+          />
+          <TextField
+            sx={{
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+              borderRadius: "5px",
+              marginBottom: "20px",
+            }}
+            fullWidth
+            onChange={handleInp}
+            name="desc"
+            label="desc"
+            variant="outlined"
+            value={product.desc}
+          />
+        </Box>
+
         <TextField
           sx={{
-            backgroundColor: "white",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-          fullWidth
-          onChange={handleInp}
-          name="title"
-          label="title"
-          variant="outlined"
-          value={product.title}
-        />
-        <TextField
-          sx={{
-            backgroundColor: "white",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-          fullWidth
-          onChange={handleInp}
-          name="desc"
-          label="desc"
-          variant="outlined"
-          value={product.desc}
-        />
-        <TextField
-          sx={{
-            backgroundColor: "white",
+            background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
             borderRadius: "5px",
             marginBottom: "20px",
           }}
@@ -109,61 +116,63 @@ const AddProduct = () => {
           variant="outlined"
           value={product.video}
         />
+        <Box sx={{ display: "flex" }}>
+          <TextField
+            sx={{
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+              borderRadius: "5px",
+              marginBottom: "20px",
+            }}
+            fullWidth
+            onChange={handleInp}
+            name="pic1"
+            label="pic1"
+            variant="outlined"
+            value={product.pic1}
+          />
+          <TextField
+            sx={{
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+              borderRadius: "5px",
+              marginBottom: "20px",
+            }}
+            fullWidth
+            onChange={handleInp}
+            name="pic2"
+            label="pic2"
+            variant="outlined"
+            value={product.pic2}
+          />
+          <TextField
+            sx={{
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+              borderRadius: "5px",
+              marginBottom: "20px",
+            }}
+            fullWidth
+            onChange={handleInp}
+            name="pic3"
+            label="pic3"
+            variant="outlined"
+            value={product.pic3}
+          />
+          <TextField
+            sx={{
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+              borderRadius: "5px",
+              marginBottom: "20px",
+            }}
+            fullWidth
+            onChange={handleInp}
+            name="pic4"
+            label="pic4"
+            variant="outlined"
+            value={product.pic4}
+          />
+        </Box>
         <TextField
           sx={{
-            backgroundColor: "white",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-          fullWidth
-          onChange={handleInp}
-          name="pic1"
-          label="pic1"
-          variant="outlined"
-          value={product.pic1}
-        />
-        <TextField
-          sx={{
-            backgroundColor: "white",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-          fullWidth
-          onChange={handleInp}
-          name="pic2"
-          label="pic2"
-          variant="outlined"
-          value={product.pic2}
-        />
-        <TextField
-          sx={{
-            backgroundColor: "white",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-          fullWidth
-          onChange={handleInp}
-          name="pic3"
-          label="pic3"
-          variant="outlined"
-          value={product.pic3}
-        />
-        <TextField
-          sx={{
-            backgroundColor: "white",
-            borderRadius: "5px",
-            marginBottom: "20px",
-          }}
-          fullWidth
-          onChange={handleInp}
-          name="pic4"
-          label="pic4"
-          variant="outlined"
-          value={product.pic4}
-        />
-        <TextField
-          sx={{
-            backgroundColor: "white",
+            background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
             borderRadius: "5px",
             marginBottom: "20px",
           }}
@@ -176,7 +185,7 @@ const AddProduct = () => {
         />
         <Box
           sx={{
-            backgroundColor: "white",
+            background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
             borderRadius: "5px",
             marginBottom: "10px",
           }}
@@ -187,7 +196,7 @@ const AddProduct = () => {
         <Box sx={{ backgroundColor: "orange", borderRadius: "5px" }}>
           <Button
             sx={{
-              backgroundColor: "white",
+              background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
               borderRadius: "5px",
               color: "black",
               fontSize: "22px",
