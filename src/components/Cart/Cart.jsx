@@ -35,20 +35,9 @@ export default function Cart() {
   return (
     <TableContainer
       component={Paper}
-      style={{ width: "80%", margin: "auto", backgroundColor: "" }}
+      style={{ width: "50%", marginLeft: "18%", backgroundColor: "" }}
     >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Picture</TableCell>
-            <TableCell align="right">Title</TableCell>
-            <TableCell align="right">Category</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Count</TableCell>
-            <TableCell align="right">SubPrice</TableCell>
-            <TableCell align="right">-</TableCell>
-          </TableRow>
-        </TableHead>
         <TableBody>
           {cart?.products.map((row) => (
             <TableRow
