@@ -50,7 +50,13 @@ const ProductList = () => {
           />
         ))}
       </Box>
-      <Pagination count={count} page={page} onChange={handleChange} />
+      <Pagination
+        sx={{ marginLeft: "45%" }}
+        count={count}
+        page={page}
+        onChange={handleChange}
+        color="primary"
+      />
     </Grid>
   );
 };
