@@ -1,10 +1,30 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import "./navigate.css";
+import { Button } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 
 const Navigate = () => {
   return (
-    <div>
+    <div style={{ marginTop: "40px" }}>
+      <Link to={"/cart"}>
+        <div
+          style={{ display: "flex", justifyContent: "flex-end", width: "82%" }}
+        >
+          <Button
+            sx={{
+              width: "9%",
+              color: "#a4d007 ",
+              background: "rgba(164,208,7,0.4)",
+              height: "20px",
+              borderRadius: "0",
+            }}
+          >
+            Корзина
+          </Button>
+        </div>
+      </Link>
+
       <div
         style={{
           display: "flex",
@@ -15,7 +35,6 @@ const Navigate = () => {
           boxshadow: "0 0 3px rgba( 0, 0, 0, 0.4)",
           width: "65%",
           margin: "auto",
-          marginTop: "40px",
         }}
       >
         <ul
