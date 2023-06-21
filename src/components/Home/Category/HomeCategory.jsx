@@ -19,9 +19,10 @@ export default function HomeCategory() {
         <h2
           style={{
             color: "#c6d4df",
-            width: "75%",
+            width: "65%",
             margin: "auto",
-            textAlign: "center",
+            textAlign: "start",
+            marginBottom: "20px",
           }}
         >
           Игры по категориям
@@ -33,28 +34,168 @@ export default function HomeCategory() {
           modules={[Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <Box
-              sx={{
-                background:
-                  "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,0)) 100%",
-              }}
-            >
-              <img
-                style={{ opacity: "0.25" }}
-                src="https://store.steampowered.com/categories/homepageimage/category/action?cc=us&l=russian"
-                alt=""
-              />
-            </Box>
-          </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
-          <SwiperSlide>Slide 5</SwiperSlide>
-          <SwiperSlide>Slide 6</SwiperSlide>
-          <SwiperSlide>Slide 7</SwiperSlide>
-          <SwiperSlide>Slide 8</SwiperSlide>
-          <SwiperSlide>Slide 9</SwiperSlide>
+          <Box>
+            <SwiperSlide className="category_slide">
+              <Box
+                sx={{
+                  backgroundImage:
+                    "url(https://store.steampowered.com/categories/homepageimage/category/action?cc=us&l=russian)",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "250px",
+                    height: "250px",
+
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,0)) 100%",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "white",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    Экшн
+                  </h3>
+                </Box>
+              </Box>
+            </SwiperSlide>
+            <SwiperSlide className="category_slide">
+              <Box
+                sx={{
+                  backgroundImage:
+                    "url(https://store.steampowered.com/categories/homepageimage/category/strategy?cc=us&l=russian)",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "250px",
+                    height: "250px",
+
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,0,139)) 100%",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "white",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    Стратегии
+                  </h3>
+                </Box>
+              </Box>
+            </SwiperSlide>
+            <SwiperSlide className="category_slide">
+              <Box
+                sx={{
+                  backgroundImage:
+                    "url(https://store.steampowered.com/categories/homepageimage/category/fighting_martial_arts?cc=us&l=russian)",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "250px",
+                    height: "250px",
+
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,139)) 100%",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "white",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    Файтинг
+                  </h3>
+                </Box>
+              </Box>
+            </SwiperSlide>
+            <SwiperSlide className="category_slide">
+              <Box
+                sx={{
+                  backgroundImage:
+                    "url(https://store.steampowered.com/categories/homepageimage/category/sports?cc=us&l=russian)",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "250px",
+                    height: "250px",
+
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(233,140,0)) 100%",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "white",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    Спортивные игры
+                  </h3>
+                </Box>
+              </Box>
+            </SwiperSlide>
+            <SwiperSlide className="category_slide">
+              <Box
+                sx={{
+                  backgroundImage:
+                    "url(https://store.steampowered.com/categories/homepageimage/category/racing?cc=us&l=russian)",
+                }}
+              >
+                <Box
+                  sx={{
+                    width: "250px",
+                    height: "250px",
+
+                    background:
+                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,139,139)) 100%",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                  }}
+                >
+                  <h3
+                    style={{
+                      color: "white",
+                      marginBottom: "20px",
+                    }}
+                  >
+                    Гонки
+                  </h3>
+                </Box>
+              </Box>
+            </SwiperSlide>
+          </Box>
         </Swiper>
       </Box>
     </>
