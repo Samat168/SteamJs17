@@ -5,6 +5,7 @@ import NotFoundPage from "../pages/NotFoundPage";
 import ProductPage from "../pages/ProductPage";
 import { Route, Routes } from "react-router-dom";
 import EditProductPage from "../pages/EditProductPage";
+import AuthPage from "../pages/AuthPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -28,6 +29,11 @@ const MainRoutes = () => {
       link: "/products",
       element: <ProductPage />,
       id: 4,
+    },
+    {
+      link: "/auth",
+      element: <AuthPage />,
+      id: 6,
     },
     {
       link: "/edit/:id",
