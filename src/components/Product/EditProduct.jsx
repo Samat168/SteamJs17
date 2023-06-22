@@ -15,6 +15,7 @@ const EditProduct = () => {
     video: "",
     price: 0,
     category: "",
+    releaseDate: "",
   });
   const { saveEditedProduct, getProductDetails, productDetails } =
     useProducts();
@@ -172,6 +173,19 @@ const EditProduct = () => {
           label="price"
           variant="outlined"
           value={product.price}
+        />
+        <TextField
+          sx={{
+            backgroundColor: "white",
+            borderRadius: "5px",
+            marginBottom: "20px",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="releaseDate"
+          label="Дата выхода"
+          variant="outlined"
+          value={product.releaseDate}
         />
         <Box
           sx={{

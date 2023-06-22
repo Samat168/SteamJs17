@@ -25,6 +25,9 @@ export default function CategorySelect({ product, setProduct }) {
           <MenuItem value="Гонки">Гонки</MenuItem>
           <MenuItem value="Экшены">Экшены</MenuItem>
           <MenuItem value="Шутеры">Шутеры</MenuItem>
+          <MenuItem value="Файтинги">Файтинги</MenuItem>
+          <MenuItem value="Спортивные игры">Cпортивные игры</MenuItem>
+          <MenuItem value="Стратегии">Cтартегии</MenuItem>
         </Select>
       </FormControl>
     </Box>

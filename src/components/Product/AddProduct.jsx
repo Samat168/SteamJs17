@@ -14,6 +14,7 @@ const AddProduct = () => {
     video: "",
     price: 0,
     category: "",
+    releaseDate: "",
   });
   const { addProduct } = useProducts();
 
@@ -182,6 +183,19 @@ const AddProduct = () => {
           label="price"
           variant="outlined"
           value={product.price}
+        />
+        <TextField
+          sx={{
+            background: "linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%)",
+            borderRadius: "5px",
+            marginBottom: "20px",
+          }}
+          fullWidth
+          onChange={handleInp}
+          name="releaseDate"
+          label="Дата выхода"
+          variant="outlined"
+          value={product.releaseDate}
         />
         <Box
           sx={{

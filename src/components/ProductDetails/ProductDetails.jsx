@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
@@ -8,27 +8,37 @@ const ProductDetails = () => {
   const { getProductDetails, productDetails } = useProducts();
 
   const { id } = useParams();
+  const videoRef = useRef(null);
 
   useEffect(() => {
     getProductDetails(id);
+    videoRef.current.src = null;
   }, []);
+
+  useEffect(() => {
+    if (productDetails?.video) {
+      videoRef.current.src = productDetails.video;
+    }
+  }, [productDetails]);
+
+  const formatReleaseDate = (date) => {
+    const options = { year: "numeric", month: "long", day: "numeric" };
+    return new Date(date).toLocaleDateString(undefined, options);
+  };
   return (
     <div>
       <Navigate />
       <div className="container_details">
         <div className="details_info">
           <p className="detail-info">
-            Все игры / {productDetails?.category} / {productDetails?.title}{" "}
+            Все игры / {productDetails?.category} / {productDetails?.title}
           </p>
           <p className="detail-title">{productDetails?.title}</p>
         </div>
         <div className="details_wrapper">
           <div className="block_details_left">
-            <video width="600" height="370" controls autoPlay>
-              <source
-                src="https://cdn.akamai.steamstatic.com/steam/apps/256951745/movie480_vp9.webm?t=1686273391"
-                type="video/mp4"
-              />
+            <video ref={videoRef} width="100%" height="370" controls autoPlay>
+              <source src={productDetails?.video} type="video/mp4" />
               Ваш браузер не поддерживает воспроизведение видео.
             </video>
             <div className="details_img">
@@ -46,6 +56,13 @@ const ProductDetails = () => {
               className="img_product_right"
             />
             <p className="details_right_desc">{productDetails?.desc}</p>
+            <p className="release-date">
+              Дата выхода:
+              <span className="date-name">
+                {" "}
+                {formatReleaseDate(productDetails?.releaseDate)}
+              </span>
+            </p>
           </div>
         </div>
       </div>
