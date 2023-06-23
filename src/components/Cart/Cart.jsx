@@ -35,7 +35,10 @@ export default function Cart() {
   return (
     <TableContainer
       component={Paper}
-      style={{ width: "50%", marginLeft: "18%", backgroundColor: "" }}
+      style={{
+        width: "50%",
+        marginLeft: "18%",
+      }}
     >
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableBody>
