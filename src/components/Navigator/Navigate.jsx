@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchIcon from "@mui/icons-material/Search";
 import "./navigate.css";
 import { Button } from "@mui/material";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const Navigate = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [search, setSearch] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    setSearchParams({ q: search });
+  }, [search]);
   return (
     <div style={{ marginTop: "40px" }}>
       <Link to={"/cart"}>
@@ -67,7 +73,11 @@ const Navigate = () => {
             color: "#fff",
           }}
         >
-          <input type="text" placeholder="поиск" />
+          <input
+            type="text"
+            placeholder="поиск"
+            onChange={(e) => setSearch(e.target.value)}
+          />
           <button>
             <SearchIcon color="action" />
           </button>
