@@ -36,7 +36,8 @@
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/81958/movie480.webm?t=1554409259",
       "price": 439,
       "category": "Шутеры",
-      "id": 3
+      "id": 3,
+      "releaseDate": "2021-12-05"
     },
     {
       "title": "Forza Horizon 5",
@@ -121,19 +122,6 @@
       "price": 102,
       "category": "Файтинги",
       "id": 10
-    },
-    {
-      "title": "ывпвп",
-      "desc": "22222",
-      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
-      "pic2": "ыаы",
-      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
-      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
-      "video": "ыыыы",
-      "price": 22,
-      "category": "Экшены",
-      "releaseDate": "2004-12-05",
-      "id": 11
     }
   ]
 }

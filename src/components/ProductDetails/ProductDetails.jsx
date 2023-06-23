@@ -3,6 +3,8 @@ import { useProducts } from "../../contexts/ProductContextProvider";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import Navigate from "../Navigator/Navigate";
+import ProductComment from "./ProductComment";
+import ProductCommentList from "./ProductCommentList";
 
 const ProductDetails = () => {
   const { getProductDetails, productDetails } = useProducts();
@@ -26,7 +28,7 @@ const ProductDetails = () => {
     return new Date(date).toLocaleDateString(undefined, options);
   };
   return (
-    <div>
+    <div className="conter">
       <Navigate />
       <div className="container_details">
         <div className="details_info">
@@ -65,6 +67,8 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
+        <ProductCommentList />
+        <ProductComment />
       </div>
     </div>
   );

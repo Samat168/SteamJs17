@@ -1,0 +1,31 @@
+.text-comment {
+  color: white;
+  margin-top: 10%;
+}
+
+.comment {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 40px;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-date {
+  color: #777777;
+  font-size: 12px;
+}
+
+.comment-content {
+  margin-top: 5px;
+}
