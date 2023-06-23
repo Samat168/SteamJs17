@@ -52,18 +52,6 @@
       "id": 4
     },
     {
-      "title": "PUBG: BATTLEGROUNDS",
-      "desc": "Играйте В PUBG: BATTLEGROUNDS бесплатно. Высаживайтесь в стратегически важных местах, добывайте оружие и припасы и постарайтесь выжить и остаться последней командой на одном из многочисленных полей боя.",
-      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg?t=1684838697",
-      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_0ed7a688a11af33acc56a453d2c8274890cc83db.600x338.jpg?t=1684838697",
-      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_f148e1cd44da2972d1b61da1e12b7b3587c1f6a3.600x338.jpg?t=1684838697",
-      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_c2456a0981b61eca4e84d3ff62fff6c78d61a6d0.600x338.jpg?t=1684838697",
-      "video": "https://cdn.akamai.steamstatic.com/steam/apps/256948448/movie480_vp9.webm?t=1684838689",
-      "price": 100,
-      "category": "Шутеры",
-      "id": 5
-    },
-    {
       "title": "Grand Theft Auto V",
       "desc": "Grand Theft Auto V для PC позволяет игрокам исследовать знаменитый мир Лос-Сантоса и округа Блэйн в разрешении до 4k и выше с частотой 60 кадров в секунду.",
       "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg?t=1678296348",
@@ -122,6 +110,48 @@
       "price": 102,
       "category": "Файтинги",
       "id": 10
+<<<<<<< HEAD
+=======
+    },
+    {
+      "title": "ывпвп",
+      "desc": "22222",
+      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
+      "pic2": "ыаы",
+      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
+      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
+      "video": "ыыыы",
+      "price": 22,
+      "category": "Экшены",
+      "releaseDate": "2004-12-05",
+      "id": 11
+    },
+    {
+      "title": "PUBG: BATTLEGROUNDS",
+      "desc": "Играйте В PUBG: BATTLEGROUNDS бесплатно. Высаживайтесь в стратегически важных местах, добывайте оружие и припасы и постарайтесь выжить и остаться последней командой на одном из многочисленных полей боя.",
+      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg?t=1684838697",
+      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_f148e1cd44da2972d1b61da1e12b7b3587c1f6a3.116x65.jpg?t=1684838697",
+      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_c2456a0981b61eca4e84d3ff62fff6c78d61a6d0.600x338.jpg?t=1684838697",
+      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_4bbcaeac1ef977d962c60c1a5e4675cdd81de564.600x338.jpg?t=1684838697",
+      "video": "https://cdn.akamai.steamstatic.com/steam/apps/256948448/movie480_vp9.webm?t=1684838689",
+      "price": 0,
+      "category": "Шутеры",
+      "releaseDate": "2017-12-21",
+      "id": 12
+    },
+    {
+      "title": "Team Fortress 2",
+      "desc": "Девять принципиально различающихся классов дают простор для любых тактик и способностей. В игру постоянно добавляются новые игровые режимы, карты, снаряжение и, самое главное, шляпы!",
+      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/440/header.jpg?t=1682961494",
+      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/440/0000002574.600x338.jpg?t=1682961494",
+      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/440/0000002575.600x338.jpg?t=1682961494",
+      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/440/0000002577.600x338.jpg?t=1682961494",
+      "video": "https://cdn.akamai.steamstatic.com/steam/apps/256698790/movie480.webm?t=1682961253",
+      "price": 0,
+      "category": "Экшены",
+      "releaseDate": "2007-10-10",
+      "id": 13
+>>>>>>> af2d507afbf1f01acdc81f581a6bda291d122bd7
     }
   ]
 }

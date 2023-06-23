@@ -4,18 +4,15 @@ import ProductComment from "./ProductComment";
 
 const ProductCommentList = () => {
   const addComment = (author, content) => {
-    // Получаем текущие комментарии из localStorage (если они есть)
     const existingComments = localStorage.getItem("comments");
     const comments = existingComments ? JSON.parse(existingComments) : [];
 
-    // Создаем новый комментарий
     const newComment = {
       author,
       content,
-      date: new Date().toLocaleString(), // Добавляем текущую дату и время
+      date: new Date().toLocaleString(),
     };
 
-    // Добавляем новый комментарий в массив комментариев
     comments.push(newComment);
 
     localStorage.setItem("comments", JSON.stringify(comments));
