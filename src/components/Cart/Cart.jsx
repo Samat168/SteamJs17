@@ -35,20 +35,22 @@ export default function Cart() {
   return (
     <TableContainer
       component={Paper}
-      style={{ width: "80%", margin: "auto", backgroundColor: "" }}
+      style={{
+        width: "50%",
+        marginLeft: "18%",
+        backgroundColor: "rgba(0,0,0,0.2)",
+        // minHeight: "77px",
+      }}
     >
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
-        <TableHead>
-          <TableRow>
-            <TableCell>Picture</TableCell>
-            <TableCell align="right">Title</TableCell>
-            <TableCell align="right">Category</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Count</TableCell>
-            <TableCell align="right">SubPrice</TableCell>
-            <TableCell align="right">-</TableCell>
-          </TableRow>
-        </TableHead>
+      <Table
+        sx={{
+          minWidth: 650,
+          backgroundColor: "rgba(0,0,0,0.2)",
+          minHeight: "77px",
+          color: "white",
+        }}
+        aria-label="simple table"
+      >
         <TableBody>
           {cart?.products.map((row) => (
             <TableRow
@@ -58,10 +60,16 @@ export default function Cart() {
               <TableCell component="th" scope="row">
                 <img width={100} src={row.item.pic1} alt="" />
               </TableCell>
-              <TableCell align="right">{row.item.title}</TableCell>
-              <TableCell align="right">{row.item.category}</TableCell>
-              <TableCell align="right">{row.item.price}</TableCell>
-              <TableCell align="right">
+              <TableCell sx={{ color: "white" }} align="right">
+                {row.item.title}
+              </TableCell>
+              <TableCell sx={{ color: "white" }} align="right">
+                {row.item.category}
+              </TableCell>
+              <TableCell sx={{ color: "white" }} align="right">
+                {row.item.price} $
+              </TableCell>
+              {/* <TableCell align="right">
                 <input
                   onChange={(e) =>
                     changeProductCount(e.target.value, row.item.id)
@@ -71,10 +79,22 @@ export default function Cart() {
                   type="number"
                   value={row.count}
                 />
+              </TableCell> */}
+              <TableCell sx={{ color: "white" }} align="right">
+                {row.subPrice}
               </TableCell>
-              <TableCell align="right">{row.subPrice}</TableCell>
               <TableCell align="right">
-                <button onClick={() => deleteCartProduct(row.item.id)}>
+                <button
+                  style={{
+                    background:
+                      "linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%)",
+                  }}
+                  onClick={() => deleteCartProduct(row.item.id)}
+                  // sx={{
+                  //   background:
+                  //     "linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%)",
+                  // }}
+                >
                   DELETE
                 </button>
               </TableCell>

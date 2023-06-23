@@ -68,15 +68,25 @@ export default function Auth() {
   };
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <Container component="main" maxWidth="xs">
+    <Box
+      sx={{
+        background:
+          " url(	https://store.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg)",
+        margin: 0,
+        paddingTop: 8,
+      }}
+    >
+      <Container component="main" maxWidth="xs" sx={{}}>
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
+            padding: "25px",
             display: "flex",
             flexDirection: "column",
-            // alignItems: "center",
+            // background:
+            //   " url(	https://store.akamai.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg)",
+            width: "100%",
+            borderRadius: "20px",
           }}
         >
           <img
@@ -188,6 +198,6 @@ export default function Auth() {
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
-    </ThemeProvider>
+    </Box>
   );
 }
