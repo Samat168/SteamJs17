@@ -1,0 +1,15 @@
+.card_div {
+  background: -webkit-linear-gradient(
+    left,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.card_div:hover {
+  background: rgba(235, 246, 255, 0.2);
+}
+
+.games_text {
+  color: #c6d4df;
+}
