@@ -1,7 +1,14 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 import { ACTIONS, API } from "../helpers/consts";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { Home } from "@mui/icons-material";
 
 export const productContext = createContext();
 export const useProducts = () => {
@@ -68,6 +75,15 @@ const ProductContextProvider = ({ children }) => {
     navigate(url);
   };
 
+  const [catValue, setCatValue] = useState("");
+  const change = (str) => {
+    setCatValue(str);
+  };
+  const [searchParams, setSearchParams] = useSearchParams();
+  const changeCategory = (cat) => {
+    setSearchParams(cat);
+  };
+
   const values = {
     addProduct,
     fetchByParams,
@@ -77,6 +93,10 @@ const ProductContextProvider = ({ children }) => {
     getProductDetails,
     productDetails: state.productDetails,
     saveEditedProduct,
+    change,
+    catValue,
+    searchParams,
+    changeCategory,
   };
   return (
     <productContext.Provider value={values}>{children}</productContext.Provider>

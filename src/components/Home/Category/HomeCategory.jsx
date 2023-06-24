@@ -11,6 +11,8 @@ import "./category.css";
 // import required modules
 import { Navigation } from "swiper";
 import { Box } from "@mui/material";
+import { Link } from "react-router-dom";
+import { useProducts } from "../../../contexts/ProductContextProvider";
 
 export default function HomeCategory() {
   return (
@@ -36,164 +38,176 @@ export default function HomeCategory() {
         >
           <Box>
             <SwiperSlide className="category_slide">
-              <Box
-                sx={{
-                  backgroundImage:
-                    "url(https://store.steampowered.com/categories/homepageimage/category/action?cc=us&l=russian)",
-                }}
-              >
+              <Link to={"/products"}>
                 <Box
+                  id="Экшены"
                   sx={{
-                    width: "250px",
-                    height: "250px",
-
-                    background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,0)) 100%",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
+                    backgroundImage:
+                      "url(https://store.steampowered.com/categories/homepageimage/category/action?cc=us&l=russian)",
                   }}
                 >
-                  <h3
-                    style={{
-                      color: "white",
-                      marginBottom: "20px",
+                  <Box
+                    sx={{
+                      width: "250px",
+                      height: "250px",
+
+                      background:
+                        "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,0)) 100%",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    Экшн
-                  </h3>
+                    <h3
+                      style={{
+                        color: "white",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Экшн
+                    </h3>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </SwiperSlide>
             <SwiperSlide className="category_slide">
-              <Box
-                sx={{
-                  backgroundImage:
-                    "url(https://store.steampowered.com/categories/homepageimage/category/strategy?cc=us&l=russian)",
-                }}
-              >
+              <Link to={"/products"}>
                 <Box
                   sx={{
-                    width: "250px",
-                    height: "250px",
-
-                    background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,0,139)) 100%",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
+                    backgroundImage:
+                      "url(https://store.steampowered.com/categories/homepageimage/category/strategy?cc=us&l=russian)",
                   }}
                 >
-                  <h3
-                    style={{
-                      color: "white",
-                      marginBottom: "20px",
+                  <Box
+                    sx={{
+                      width: "250px",
+                      height: "250px",
+
+                      background:
+                        "linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,0,139)) 100%",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    Стратегии
-                  </h3>
+                    <h3
+                      style={{
+                        color: "white",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Стратегии
+                    </h3>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </SwiperSlide>
             <SwiperSlide className="category_slide">
-              <Box
-                sx={{
-                  backgroundImage:
-                    "url(https://store.steampowered.com/categories/homepageimage/category/fighting_martial_arts?cc=us&l=russian)",
-                }}
-              >
+              <Link to={"/products"}>
                 <Box
                   sx={{
-                    width: "250px",
-                    height: "250px",
-
-                    background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,139)) 100%",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
+                    backgroundImage:
+                      "url(https://store.steampowered.com/categories/homepageimage/category/fighting_martial_arts?cc=us&l=russian)",
                   }}
                 >
-                  <h3
-                    style={{
-                      color: "white",
-                      marginBottom: "20px",
+                  <Box
+                    sx={{
+                      width: "250px",
+                      height: "250px",
+
+                      background:
+                        "linear-gradient(to bottom, rgba(0,0,0,0), rgb(139,0,139)) 100%",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    Файтинг
-                  </h3>
+                    <h3
+                      style={{
+                        color: "white",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Файтинг
+                    </h3>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </SwiperSlide>
             <SwiperSlide className="category_slide">
-              <Box
-                sx={{
-                  backgroundImage:
-                    "url(https://store.steampowered.com/categories/homepageimage/category/sports?cc=us&l=russian)",
-                }}
-              >
+              <Link to={"/products"}>
                 <Box
                   sx={{
-                    width: "250px",
-                    height: "250px",
-
-                    background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(233,140,0)) 100%",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
+                    backgroundImage:
+                      "url(https://store.steampowered.com/categories/homepageimage/category/sports?cc=us&l=russian)",
                   }}
                 >
-                  <h3
-                    style={{
-                      color: "white",
-                      marginBottom: "20px",
+                  <Box
+                    sx={{
+                      width: "250px",
+                      height: "250px",
+
+                      background:
+                        "linear-gradient(to bottom, rgba(0,0,0,0), rgb(233,140,0)) 100%",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    Спортивные игры
-                  </h3>
+                    <h3
+                      style={{
+                        color: "white",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Спортивные игры
+                    </h3>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </SwiperSlide>
+
             <SwiperSlide className="category_slide">
-              <Box
-                sx={{
-                  backgroundImage:
-                    "url(https://store.steampowered.com/categories/homepageimage/category/racing?cc=us&l=russian)",
-                }}
-              >
+              <Link to={"/products"}>
                 <Box
                   sx={{
-                    width: "250px",
-                    height: "250px",
-
-                    background:
-                      "linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,139,139)) 100%",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-end",
+                    backgroundImage:
+                      "url(https://store.steampowered.com/categories/homepageimage/category/racing?cc=us&l=russian)",
                   }}
                 >
-                  <h3
-                    style={{
-                      color: "white",
-                      marginBottom: "20px",
+                  <Box
+                    sx={{
+                      width: "250px",
+                      height: "250px",
+
+                      background:
+                        "linear-gradient(to bottom, rgba(0,0,0,0), rgb(0,139,139)) 100%",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "flex-end",
                     }}
                   >
-                    Гонки
-                  </h3>
+                    <h3
+                      style={{
+                        color: "white",
+                        marginBottom: "20px",
+                      }}
+                    >
+                      Гонки
+                    </h3>
+                  </Box>
                 </Box>
-              </Box>
+              </Link>
             </SwiperSlide>
           </Box>
         </Swiper>

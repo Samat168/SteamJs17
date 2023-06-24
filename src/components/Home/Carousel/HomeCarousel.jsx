@@ -12,6 +12,7 @@ import "./carousel.css";
 import { Navigation } from "swiper";
 
 import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export default function App({ action, name }) {
   const [mainPic, setMainPic] = useState();
@@ -29,6 +30,7 @@ export default function App({ action, name }) {
     setVideo(vid);
     setForVideo(true);
   };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -40,8 +42,12 @@ export default function App({ action, name }) {
 
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {action.map((item) => (
-          <SwiperSlide key={item.id}>
+          <SwiperSlide
+            key={item.id}
+            onClick={() => navigate(`/details/${item.id}`)}
+          >
             <Box
+              className={"home-slide"}
               sx={{
                 display: "flex",
                 width: "100%",
