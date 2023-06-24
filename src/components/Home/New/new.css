@@ -1,4 +1,5 @@
 .card_div {
+  margin: 0 10px 10px 0;
   background: -webkit-linear-gradient(
     left,
     rgba(0, 0, 0, 0) 50%,
@@ -8,6 +9,7 @@
 
 .card_div:hover {
   background: rgba(235, 246, 255, 0.2);
+  margin: 0 0 10px;
 }
 
 .games_text {
