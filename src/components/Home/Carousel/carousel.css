@@ -39,3 +39,12 @@ body {
   height: 100%;
   object-fit: cover;
 }
+.mySwiper .home-slide {
+  transition: transform 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mySwiper .home-slide:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
