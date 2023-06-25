@@ -3,11 +3,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import "./navigate.css";
 import { Button } from "@mui/material";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
+import { useCart } from "../../contexts/CartContextProvider";
 
 const Navigate = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
-
+  const { cart } = useCart();
+  const { products } = cart;
   useEffect(() => {
     setSearchParams({ q: search });
   }, [search]);
@@ -26,7 +28,7 @@ const Navigate = () => {
               borderRadius: "0",
             }}
           >
-            Корзина
+            Корзина({products.length})
           </Button>
         </div>
       </Link>

@@ -19,7 +19,7 @@ const pages = [
   { name: "Игры", link: "/products", id: 2 },
   { name: "ADMIN", link: "/admin", id: 3 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Dashboard"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -158,14 +158,28 @@ function Navbar() {
           >
             {email ? (
               <MenuItem>
-                <Typography textAlign="center">hello, {email}!</Typography>
+                <Typography textAlign="center">{email}</Typography>
               </MenuItem>
-            ) : null}
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
+            ) : (
+              <Link to="/auth">
+                <MenuItem>
+                  <Typography textAlign="center" sx={{ color: "black" }}>
+                    Register
+                  </Typography>
+                </MenuItem>
+              </Link>
+            )}
+
+            {email && (
+              <MenuItem
+                onClick={() => {
+                  handleCloseUserMenu();
+                  handleLogout();
+                }}
+              >
+                <Typography textAlign="center">Logout</Typography>
               </MenuItem>
-            ))}
+            )}
           </Menu>
         </Toolbar>
       </Container>

@@ -5,9 +5,12 @@ import "./ProductDetails.css";
 import Navigate from "../Navigator/Navigate";
 import ProductComment from "./ProductComment";
 import ProductCommentList from "./ProductCommentList";
+import WindowIcon from "@mui/icons-material/Window";
+import { useCart } from "../../contexts/CartContextProvider";
 
 const ProductDetails = () => {
   const { getProductDetails, productDetails } = useProducts();
+  const { addProductToCart, checkProductInCart } = useCart();
 
   const { id } = useParams();
   const videoRef = useRef(null);
@@ -29,7 +32,6 @@ const ProductDetails = () => {
   };
   return (
     <div className="conter">
-      <Navigate />
       <div className="container_details">
         <div className="details_info">
           <p className="detail-info">
@@ -39,7 +41,7 @@ const ProductDetails = () => {
         </div>
         <div className="details_wrapper">
           <div className="block_details_left">
-            <video ref={videoRef} width="100%" height="370" controls autoPlay>
+            <video ref={videoRef} className="details_video" controls autoPlay>
               <source src={productDetails?.video} type="video/mp4" />
               Ваш браузер не поддерживает воспроизведение видео.
             </video>
@@ -67,8 +69,37 @@ const ProductDetails = () => {
             </p>
           </div>
         </div>
-        <ProductCommentList />
-        <ProductComment />
+        <div className="product_details_cost">
+          <div
+            style={{
+              width: "90%",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <p className="product_details_buy">
+              Купить {productDetails?.title}
+            </p>
+            <img
+              src="https://cdn-icons-png.flaticon.com/128/732/732225.png"
+              alt=""
+              width={30}
+            />
+            <div className="game_cost">
+              <div className="price">${productDetails?.price} USD</div>
+              <div
+                className="add-to-cart"
+                onClick={() => addProductToCart(productDetails)}
+              >
+                {checkProductInCart(productDetails?.id)
+                  ? "Удалить из корзины"
+                  : "В корзину"}
+              </div>
+            </div>
+          </div>
+        </div>
+        <h3 className="people-review">ОТЗЫВЫ ПОКУПАТЕЛЕЙ</h3>
+        <ProductCommentList productId={id} />
       </div>
     </div>
   );
