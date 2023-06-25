@@ -12,13 +12,14 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 const pages = [
   { name: "Магазин", link: "/", id: 1 },
   { name: "Игры", link: "/products", id: 2 },
   { name: "ADMIN", link: "/admin", id: 3 },
 ];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settings = ["Profile", "Account", "Dashboard"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,6 +39,11 @@ function Navbar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
+
+  const {
+    handleLogout,
+    user: { email },
+  } = useAuth();
 
   return (
     <AppBar
@@ -150,11 +156,30 @@ function Navbar() {
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
+            {email ? (
+              <MenuItem>
+                <Typography textAlign="center">{email}</Typography>
               </MenuItem>
-            ))}
+            ) : (
+              <Link to="/auth">
+                <MenuItem>
+                  <Typography textAlign="center" sx={{ color: "black" }}>
+                    Register
+                  </Typography>
+                </MenuItem>
+              </Link>
+            )}
+
+            {email && (
+              <MenuItem
+                onClick={() => {
+                  handleCloseUserMenu();
+                  handleLogout();
+                }}
+              >
+                <Typography textAlign="center">Logout</Typography>
+              </MenuItem>
+            )}
           </Menu>
         </Toolbar>
       </Container>
