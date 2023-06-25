@@ -22,7 +22,7 @@
 
 .details_wrapper {
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
   width: 100%;
 }
 
@@ -47,8 +47,7 @@
 }
 
 .details_video {
-  width: 100%;
-  height: 370px;
+  max-width: 100%;
 }
 
 .block_details_right {
@@ -58,7 +57,7 @@
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 0.4) 100%
   );
-  margin-top: 7px;
+
   margin-left: 2%;
 }
 
@@ -105,7 +104,8 @@
     rgba(226, 244, 255, 0.3) 5%,
     rgba(84, 107, 115, 0.3) 95%
   );
-  height: 70px;
+  height: auto;
+  padding: 10px;
 
   border-radius: 7px;
   display: flex;
@@ -125,7 +125,9 @@
   left: 66%;
   top: 83%;
   align-items: center;
-  width: 20%;
+  width: 18%;
+  background-color: black;
+  height: 34px;
 }
 
 .people-review {
@@ -139,11 +141,12 @@
   background-color: #000000;
   color: #c6d4df;
   font-size: 15px;
-  height: 38px;
+
   align-items: center;
   display: flex;
-  width: 50%;
+  max-width: 50%;
   justify-content: center;
+  flex: 1;
 }
 
 .add-to-cart {
@@ -156,10 +159,28 @@
   color: #d2efa9;
   font-size: 15px;
   border: 1px solid black;
-  height: 38px;
+  height: 100%;
   align-items: center;
   display: flex;
-  width: 50%;
+  max-width: 50%;
   justify-content: center;
   cursor: pointer;
+  flex: 1;
+}
+
+.remove-to-cart {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+
+  background: linear-gradient(to right, #23145d 5%, #560b97 95%);
+  color: #cafbf3;
+  font-size: 15px;
+  border: 1px solid black;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  max-width: 50%;
+  justify-content: center;
+  cursor: pointer;
+  flex: 1 1;
 }

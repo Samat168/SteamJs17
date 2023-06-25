@@ -88,7 +88,11 @@ const ProductDetails = () => {
             <div className="game_cost">
               <div className="price">${productDetails?.price} USD</div>
               <div
-                className="add-to-cart"
+                className={`${
+                  checkProductInCart(productDetails?.id)
+                    ? "remove-to-cart"
+                    : "add-to-cart"
+                }`}
                 onClick={() => addProductToCart(productDetails)}
               >
                 {checkProductInCart(productDetails?.id)
