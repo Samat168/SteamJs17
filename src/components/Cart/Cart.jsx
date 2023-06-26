@@ -9,7 +9,9 @@ import Paper from "@mui/material/Paper";
 import { useCart } from "../../contexts/CartContextProvider";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import "./Cart.css";
+
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -25,7 +27,7 @@ const rows = [
 export default function Cart() {
   const { cart, getCart, changeProductCount, deleteCartProduct } = useCart();
 
-  React.useEffect(() => {
+  useEffect(() => {
     getCart();
   }, []);
 
