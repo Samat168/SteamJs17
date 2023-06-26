@@ -46,7 +46,7 @@
       "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/ss_cf56e25a0290556ba83229eb0ab370d10be0407c.600x338.jpg?t=1683059745",
       "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/ss_00f0090174380eeaf8753bd3d1028b6772c3aebf.600x338.jpg?t=1683059745",
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/ss_b65236b365315ebb6da6114ce42cd74b59cab3c8.600x338.jpg?t=1683059745",
-      "video": "sfs",
+      "video": "https://cdn.cloudflare.steamstatic.com/steam/apps/256875134/movie480_vp9.webm?t=1647525311",
       "price": 300,
       "category": "Гонки",
       "id": 4

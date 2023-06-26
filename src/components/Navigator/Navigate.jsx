@@ -161,9 +161,11 @@ const Navigate = (props) => {
               </ul>
             )}
           </li>
-          <li style={{ color: "white", fontSize: "17px" }}>
-            <a>Избранное</a>
-          </li>
+          <Link to="/favorite">
+            <li style={{ color: "white", fontSize: "17px" }}>
+              <a>Избранное</a>
+            </li>
+          </Link>
         </ul>
         <div
           style={{

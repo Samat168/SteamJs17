@@ -4,3 +4,5 @@ export const ACTIONS = {
   GET_PRODUCTS: "GET_PRODUCTS",
   GET_PRODUCT_DETAILS: "GET_PRODUCT_DETAILS",
 };
+
+export const ADMIN = "supersamat2004@gmail.com";

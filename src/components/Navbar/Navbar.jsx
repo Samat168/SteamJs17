@@ -13,11 +13,12 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
+import { ADMIN } from "../../helpers/consts";
 
 const pages = [
   { name: "Магазин", link: "/", id: 1 },
   { name: "Игры", link: "/products", id: 2 },
-  { name: "ADMIN", link: "/admin", id: 3 },
+  // { name: "ADMIN", link: "/admin", id: 3 },
 ];
 const settings = ["Profile", "Account", "Dashboard"];
 
@@ -111,6 +112,13 @@ function Navbar() {
                   </MenuItem>
                 </Link>
               ))}
+              {email === ADMIN ? (
+                <Link to="/admin">
+                  <MenuItem onClick={handleCloseNavMenu}>
+                    <Typography textAlign="center">ADMIN</Typography>
+                  </MenuItem>
+                </Link>
+              ) : null}
             </Menu>
           </Box>
 
@@ -125,6 +133,20 @@ function Navbar() {
                 </Button>
               </Link>
             ))}
+            {email === ADMIN ? (
+              <Link to="/admin">
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                  }}
+                >
+                  ADMIN
+                </Button>
+              </Link>
+            ) : null}
           </Box>
           <Tooltip title="Open settings">
             <IconButton
