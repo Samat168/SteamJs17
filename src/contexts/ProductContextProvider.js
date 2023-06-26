@@ -83,8 +83,21 @@ const ProductContextProvider = ({ children }) => {
   const changeCategory = (cat) => {
     setSearchParams(cat);
   };
+  const updateLikesOnServer = async (productId, newLikes) => {
+    try {
+      await axios.patch(`${API}/${productId}`, { like: parseInt(newLikes) });
+      console.log("Количество лайков успешно обновлено на сервере.");
+    } catch (error) {
+      console.error(
+        "Ошибка при обновлении количества лайков на сервере:",
+        error
+      );
+    }
+  };
 
   const values = {
+    updateLikesOnServer,
+    API,
     addProduct,
     fetchByParams,
     getProducts,

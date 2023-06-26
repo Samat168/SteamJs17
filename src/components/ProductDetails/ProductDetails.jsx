@@ -9,9 +9,11 @@ import ProductComment from "./ProductComment";
 import ProductCommentList from "./ProductCommentList";
 import WindowIcon from "@mui/icons-material/Window";
 import { useCart } from "../../contexts/CartContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
+import axios from "axios";
 const ProductDetails = () => {
-  const { getProductDetails, productDetails } = useProducts();
+  const { getProductDetails, productDetails, API } = useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
 
   const { id } = useParams();
@@ -48,6 +50,24 @@ const ProductDetails = () => {
     };
   }, []);
   // ! для адаптивки
+  const {
+    user: { email },
+  } = useAuth();
+
+  const [like, setLike] = useState(productDetails?.like);
+  const [likeButton, setLikeButton] = useState(false);
+  const incrementLikes = async (val) => {
+    const updatedLike = val ? like + 1 : like - 1;
+    setLike(updatedLike);
+
+    try {
+      const updatedData = { ...productDetails, like: updatedLike };
+      await axios.patch(`${API}/${productDetails.id}`, updatedData);
+    } catch (error) {
+      console.error("Ошибка при обновлении количества лайков:", error);
+    }
+  };
+
   return (
     <div className="conter">
       <div className="container_details">
@@ -85,6 +105,35 @@ const ProductDetails = () => {
                 {formatReleaseDate(productDetails?.releaseDate)}
               </span>
             </p>
+            <div>
+              {email ? (
+                likeButton ? (
+                  <button
+                    onClick={() => {
+                      incrementLikes(false);
+                      setLikeButton(false);
+                    }}
+                  >
+                    Не нравится
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => {
+                      incrementLikes(true);
+                      setLikeButton(true);
+                    }}
+                  >
+                    Нравится
+                  </button>
+                )
+              ) : (
+                <p style={{ color: "rgb(198, 212, 223)" }}>
+                  Зарегистрируйтесь, чтобы оставить отзыв
+                </p>
+              )}
+
+              <p>Нравится {like} людям</p>
+            </div>
           </div>
         </div>
         <div className="product_details_cost">

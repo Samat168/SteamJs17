@@ -9,6 +9,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_da11f26c8fec6def6e235786e11b868eb8b115ef.116x65.jpg?t=1686759791",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256951745/movie480_vp9.webm?t=1686273391",
       "price": 222,
+      "like": 0,
       "category": "Шутеры",
       "id": 1,
       "releaseDate": "2015-05-24"
@@ -22,6 +23,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/381210/ss_659500624438a4aa77bfdf304cba3ecebcd92ed9.600x338.jpg?t=1687283241",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256686761/movie480.webm?t=1683120259",
       "price": 785,
+      "like": 0,
       "category": "Экшены",
       "id": 2,
       "releaseDate": "2020-03-14"
@@ -35,6 +37,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/730/ss_8c9cce9a9dde7b9c020837dcbd4615efe6f77d66.600x338.jpg?t=1683566799",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/81958/movie480.webm?t=1554409259",
       "price": 439,
+      "like": 0,
       "category": "Шутеры",
       "id": 3,
       "releaseDate": "2021-12-05"
@@ -48,6 +51,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1551360/ss_b65236b365315ebb6da6114ce42cd74b59cab3c8.600x338.jpg?t=1683059745",
       "video": "sfs",
       "price": 300,
+      "like": 0,
       "category": "Гонки",
       "id": 4
     },
@@ -60,6 +64,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_c2456a0981b61eca4e84d3ff62fff6c78d61a6d0.600x338.jpg?t=1684838697",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256948448/movie480_vp9.webm?t=1684838689",
       "price": 100,
+      "like": 0,
       "category": "Шутеры",
       "id": 5
     },
@@ -72,6 +77,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_da39c16db175f6973770bae6b91d411251763152.600x338.jpg?t=1678296348",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256921436/movie480_vp9.webm?t=1671116368",
       "price": 120,
+      "like": 0,
       "category": "Экшены",
       "id": 6
     },
@@ -84,6 +90,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/570/ss_c9118375a2400278590f29a3537769c986ef6e39.600x338.jpg?t=1682639497",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256692021/movie480.webm?t=1599609272",
       "price": 12,
+      "like": 0,
       "category": "Стратегии",
       "id": 7
     },
@@ -96,6 +103,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1158310/ss_8935f82df46266a193bd088085978629fb8cf7ec.600x338.jpg?t=1686841394",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256785236/movie480_vp9.webm?t=1683100356",
       "price": 19,
+      "like": 0,
       "category": "Стратегии",
       "id": 8
     },
@@ -108,6 +116,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1364780/ss_f62ce93269a6d8e0027853358af4d6368e2c4b93.600x338.jpg?t=1686291121",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256950421/movie480_vp9.webm?t=1685677608",
       "price": 69,
+      "like": 0,
       "category": "Файтинги",
       "id": 9
     },
@@ -120,6 +129,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/976310/ss_aa70f659fe14e3c07033474249096b60c17021b3.600x338.jpg?t=1684790351",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256813084/movie480_vp9.webm?t=1607567246",
       "price": 102,
+      "like": 0,
       "category": "Файтинги",
       "id": 10
     }
