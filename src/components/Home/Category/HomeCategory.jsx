@@ -13,8 +13,28 @@ import { Navigation } from "swiper";
 import { Box } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useProducts } from "../../../contexts/ProductContextProvider";
+import { useEffect } from "react";
 
 export default function HomeCategory() {
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 990) {
+        setSlidesPerView(1);
+      } else {
+        setSlidesPerView(3);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <>
       <Box>
@@ -30,7 +50,7 @@ export default function HomeCategory() {
           Игры по категориям
         </h2>
         <Swiper
-          slidesPerView={3}
+          slidesPerView={slidesPerView}
           spaceBetween={30}
           navigation={true}
           modules={[Navigation]}
@@ -47,6 +67,7 @@ export default function HomeCategory() {
                   }}
                 >
                   <Box
+                    className="category_div"
                     sx={{
                       width: "250px",
                       height: "250px",
@@ -81,6 +102,7 @@ export default function HomeCategory() {
                   }}
                 >
                   <Box
+                    className="category_div"
                     sx={{
                       width: "250px",
                       height: "250px",
@@ -115,6 +137,7 @@ export default function HomeCategory() {
                   }}
                 >
                   <Box
+                    className="category_div"
                     sx={{
                       width: "250px",
                       height: "250px",
@@ -149,6 +172,7 @@ export default function HomeCategory() {
                   }}
                 >
                   <Box
+                    className="category_div"
                     sx={{
                       width: "250px",
                       height: "250px",
@@ -184,6 +208,7 @@ export default function HomeCategory() {
                   }}
                 >
                   <Box
+                    className="category_div"
                     sx={{
                       width: "250px",
                       height: "250px",

@@ -8,6 +8,7 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { useCart } from "../../contexts/CartContextProvider";
 import { Button } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
@@ -42,12 +43,17 @@ export default function Cart() {
         // minHeight: "77px",
       }}
     >
+      <h1 style={{ color: "whitesmoke", margin: " 5% 0 5% 3%" }}>
+        Ваша Корзина
+      </h1>
       <Table
         sx={{
           minWidth: 650,
           backgroundColor: "rgba(0,0,0,0.2)",
           minHeight: "77px",
           color: "white",
+          marginBottom: "3%",
+          borderRadius: "10px",
         }}
         aria-label="simple table"
       >
@@ -58,7 +64,7 @@ export default function Cart() {
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
               <TableCell component="th" scope="row">
-                <img width={100} src={row.item.pic1} alt="" />
+                <img width={80} src={row.item.pic1} alt="" />
               </TableCell>
               <TableCell sx={{ color: "white" }} align="right">
                 {row.item.title}
@@ -88,6 +94,10 @@ export default function Cart() {
                   style={{
                     background:
                       "linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%)",
+                    color: "white",
+                    border: "none",
+                    borderRadius: "10%",
+                    padding: "5px",
                   }}
                   onClick={() => deleteCartProduct(row.item.id)}
                   // sx={{
@@ -95,14 +105,16 @@ export default function Cart() {
                   //     "linear-gradient(90deg, rgba(62, 103, 150, 0.919) 11.38%, rgba(58, 120, 177, 0.8) 25.23%, rgb(15, 33, 110) 100%)",
                   // }}
                 >
-                  DELETE
+                  Удалить
                 </button>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <Button onClick={cartCleaner}>BUY NOW FOR {cart?.totalPrice} $</Button>
+      <Link to={"/formforpay"}>
+        <Button>BUY NOW FOR {cart?.totalPrice} $</Button>
+      </Link>
     </TableContainer>
   );
 }

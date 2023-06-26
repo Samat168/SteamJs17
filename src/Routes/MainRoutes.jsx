@@ -11,6 +11,7 @@ import CartPage from "../pages/CartPage";
 import FavoritePage from "../pages/FavoritePage";
 import { useAuth } from "../contexts/AuthContextProvider";
 import { ADMIN } from "../helpers/consts";
+import FormforPayPage from "../pages/FormforPayPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -50,6 +51,11 @@ const MainRoutes = () => {
       link: "/favorite",
       element: <FavoritePage />,
       id: 9,
+    },
+    {
+      link: "/formforpay",
+      element: <FormforPayPage />,
+      id: 10,
     },
   ];
 

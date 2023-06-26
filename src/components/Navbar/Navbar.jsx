@@ -159,7 +159,10 @@ function Navbar() {
                 marginLeft: "28%",
               }}
             >
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <Avatar
+                alt="Remy Sharp"
+                src="https://img.freepik.com/free-vector/cute-kitsune-with-sword-cartoon-character-art-object-isolated_138676-3159.jpg"
+              />
             </IconButton>
           </Tooltip>
           <Menu

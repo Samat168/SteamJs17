@@ -5,6 +5,7 @@ import { useSearchParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import Navigate from "../Navigator/Navigate";
+import Burger from "../BurgerMenu/Burger";
 
 const ProductList = () => {
   const { getProducts, products, searchParams } = useProducts();
@@ -18,6 +19,12 @@ const ProductList = () => {
   const [page, setPage] = useState(1);
   const itemsPerPage = 9;
   const count = Math.ceil(products.length / itemsPerPage);
+
+  const fill = products.filter((elem) => {
+    return elem.category === "Гонки";
+  });
+
+  console.log(fill);
 
   const handleChange = (e, p) => {
     setPage(p);
@@ -39,9 +46,26 @@ const ProductList = () => {
 
   const activeCategory = searchParams.get("category");
 
+  // ! для адаптивки
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  // ! для адаптивки
+
   return (
     <Grid item md={9} sx={{ width: "75%", margin: "auto" }}>
-      <Navigate />
+      {windowWidth < 990 ? <Burger /> : <Navigate />}
+
       <Box
         sx={{
           display: "grid",

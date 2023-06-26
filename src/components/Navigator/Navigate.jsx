@@ -6,7 +6,7 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useCart } from "../../contexts/CartContextProvider";
 import { useProducts } from "../../contexts/ProductContextProvider";
 
-const Navigate = (props) => {
+const Navigate = () => {
   const { changeCategory } = useProducts();
   const { catValue, change } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -161,11 +161,11 @@ const Navigate = (props) => {
               </ul>
             )}
           </li>
-          <Link to="/favorite">
-            <li style={{ color: "white", fontSize: "17px" }}>
+          <li style={{ color: "white", fontSize: "17px" }}>
+            <Link to="/favorite">
               <a>Избранное</a>
-            </li>
-          </Link>
+            </Link>
+          </li>
         </ul>
         <div
           style={{
@@ -179,7 +179,6 @@ const Navigate = (props) => {
           <input
             type="text"
             placeholder="поиск"
-            value={value}
             onChange={(e) => setSearch(e.target.value)}
           />
           <button>
