@@ -17,13 +17,26 @@ export default function FavoriteProducts() {
   };
   const navigate = useNavigate();
   return (
-    <Grid item md={9} sx={{ width: "75%", margin: "auto" }}>
+    <Grid
+      item
+      md={9}
+      sx={{
+        width: "75%",
+        margin: "auto",
+        "@media (max-width: 550px)": {
+          width: "64%",
+        },
+      }}
+    >
       <Box
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: "20px",
           marginTop: "7%",
+          "@media (max-width: 550px)": {
+            grid: "none",
+          },
         }}
       >
         {favorites.map((favor) => (
