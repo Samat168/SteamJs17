@@ -19,6 +19,12 @@ const ProductList = () => {
   const itemsPerPage = 9;
   const count = Math.ceil(products.length / itemsPerPage);
 
+  const fill = products.filter((elem) => {
+    return elem.category === "Гонки";
+  });
+
+  console.log(fill);
+
   const handleChange = (e, p) => {
     setPage(p);
   };
