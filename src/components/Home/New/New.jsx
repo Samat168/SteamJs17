@@ -15,175 +15,142 @@ const New = ({ free, category, clearCat }) => {
   };
   const navigate = useNavigate();
   return (
-    <div
-      style={{
-        width: "65%",
-        margin: "auto",
-
-        borderRadius: "10px",
-        padding: "10px 0",
-      }}
-    >
-      <div>
-        <ul
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            width: "70%",
-            margin: "10px",
-          }}
-        >
-          <li
-            onClick={(e) => {
-              category(0);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Бесплатные</a>
-          </li>
-          <li
-            onClick={(e) => {
-              category(e.target.innerText);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Гонки</a>
-          </li>
-          <li
-            onClick={(e) => {
-              category(e.target.innerText);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Экшены</a>
-          </li>
-          <li
-            onClick={(e) => {
-              category(e.target.innerText);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Шутеры</a>
-          </li>
-          <li
-            onClick={(e) => {
-              category(e.target.innerText);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Файтинги</a>
-          </li>
-          <li
-            onClick={(e) => {
-              category(e.target.innerText);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Спортивные игры</a>
-          </li>
-          <li
-            onClick={(e) => {
-              category(e.target.innerText);
-              clearCat();
-            }}
-            style={{ color: "white", fontSize: "17px" }}
-          >
-            <a>Стратегии</a>
-          </li>
-        </ul>
-      </div>
-      <div
-        style={{
-          display: "flex",
-          width: "100%",
-          justifyContent: "space-between",
-        }}
-      >
-        <div style={{}}>
-          {free.map((item) => (
-            <div
-              onMouseOver={(e) => showFoto(item)}
-              onClick={() => navigate(`/details/${item.id}`)}
-              className="card_div"
-              key={item.id}
-              id={item.id}
-              style={{
-                display: "flex",
-              }}
-            >
-              <img
-                id={item.id}
-                style={{ width: "40%", margin: "5px 0" }}
-                src={item.pic1}
-                alt=""
-              />
-
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  alignContent: "center",
-                  justifyContent: "space-between",
-                  padding: "10px",
-                }}
-              >
-                <h3 className="games_text">{item.title}</h3>
-                <WindowIcon className="games_text" />
-                {item.price === 0 ? (
-                  <h3 className="games_text">Free</h3>
-                ) : (
-                  <h3 className="games_text">{item.price} $</h3>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-        <div
-          style={{
-            width: "60%",
-            height: "700px",
-            background: "rgba(235, 246, 255, 0.20)",
-          }}
-        >
-          <ul
-            style={{
-              width: "100%",
-            }}
-          >
+    <div style={{ width: "100%" }}>
+      <div className="new_div">
+        <div>
+          <ul className="new_list" style={{}}>
             <li
-              style={{
-                margin: "5px 0",
-                display: "flex",
-                justifyContent: "center",
+              className="new_list_elem"
+              onClick={(e) => {
+                category(0);
+                clearCat();
               }}
             >
-              <img style={{ maxWidth: "90%" }} src={pict1} alt="" />
+              <a>Бесплатные</a>
             </li>
             <li
-              style={{
-                margin: "5px 0",
-                display: "flex",
-                justifyContent: "center",
+              className="new_list_elem"
+              onClick={(e) => {
+                category(e.target.innerText);
+                clearCat();
               }}
             >
-              <img style={{ maxWidth: "90%" }} src={pict2} alt="" />
+              <a>Гонки</a>
             </li>
             <li
-              style={{
-                margin: "5px 0",
-                display: "flex",
-                justifyContent: "center",
+              className="new_list_elem"
+              onClick={(e) => {
+                category(e.target.innerText);
+                clearCat();
               }}
             >
-              <img style={{ maxWidth: "90%" }} src={pict3} alt="" />
+              <a>Экшены</a>
+            </li>
+            <li
+              className="new_list_elem"
+              onClick={(e) => {
+                category(e.target.innerText);
+                clearCat();
+              }}
+            >
+              <a>Шутеры</a>
+            </li>
+            <li
+              className="new_list_elem"
+              onClick={(e) => {
+                category(e.target.innerText);
+                clearCat();
+              }}
+            >
+              <a>Файтинги</a>
+            </li>
+            <li
+              className="new_list_elem"
+              onClick={(e) => {
+                category(e.target.innerText);
+                clearCat();
+              }}
+            >
+              <a>Спортивные игры</a>
+            </li>
+            <li
+              className="new_list_elem"
+              onClick={(e) => {
+                category(e.target.innerText);
+                clearCat();
+              }}
+            >
+              <a>Стратегии</a>
             </li>
           </ul>
+        </div>
+        <div className="new_games_div">
+          <div>
+            {free.map((item) => (
+              <div
+                onMouseOver={(e) => showFoto(item)}
+                onClick={() => navigate(`/details/${item.id}`)}
+                className="card_div"
+                key={item.id}
+                id={item.id}
+                style={{
+                  display: "flex",
+                }}
+              >
+                <img
+                  className="new_games_img"
+                  id={item.id}
+                  src={item.pic1}
+                  alt=""
+                />
+
+                <div className="new_games_price">
+                  <h3 className="games_text">{item.title}</h3>
+                  <WindowIcon className="games_text" />
+                  {item.price === 0 ? (
+                    <h3 className="games_text">Free</h3>
+                  ) : (
+                    <h3 className="games_text">{item.price} $</h3>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="new_images">
+            <ul
+              style={{
+                width: "100%",
+              }}
+            >
+              <li
+                style={{
+                  margin: "5px 0",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img style={{ maxWidth: "90%" }} src={pict1} alt="" />
+              </li>
+              <li
+                style={{
+                  margin: "5px 0",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img style={{ maxWidth: "90%" }} src={pict2} alt="" />
+              </li>
+              <li
+                style={{
+                  margin: "5px 0",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <img style={{ maxWidth: "90%" }} src={pict3} alt="" />
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

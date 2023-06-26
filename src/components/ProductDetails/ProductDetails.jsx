@@ -3,6 +3,8 @@ import { useProducts } from "../../contexts/ProductContextProvider";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import Navigate from "../Navigator/Navigate";
+import { useState } from "react";
+import Burger from "../BurgerMenu/Burger";
 import ProductComment from "./ProductComment";
 import ProductCommentList from "./ProductCommentList";
 import WindowIcon from "@mui/icons-material/Window";
@@ -30,6 +32,22 @@ const ProductDetails = () => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(date).toLocaleDateString(undefined, options);
   };
+
+  // ! для адаптивки
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  // ! для адаптивки
   return (
     <div className="conter">
       <div className="container_details">

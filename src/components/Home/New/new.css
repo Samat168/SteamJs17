@@ -15,3 +15,84 @@
 .games_text {
   color: #c6d4df;
 }
+
+.new_div {
+  width: 65%;
+  margin: auto;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.new_list {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10px;
+}
+
+.new_list_elem {
+  color: white;
+  font-size: 17px;
+}
+
+.new_games_div {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.new_games_img {
+  width: 40%;
+  margin: 5px 0;
+}
+
+.new_games_price {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.new_images {
+  width: 60%;
+  height: 700px;
+  background-color: rgba(235, 246, 255, 0.2);
+}
+
+/* Адаптивность для ширины 990px и меньше */
+@media (max-width: 990px) {
+  .new_list {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .new_list_elem {
+    margin: 3px 5px;
+    text-align: center;
+    width: 35%;
+  }
+
+  .new_images {
+    display: none;
+  }
+  .card_div {
+    padding: 0;
+    width: 100%;
+  }
+}
+
+/* Адаптивность для ширины 500px и меньше */
+@media (max-width: 500px) {
+  .new_list_elem {
+    width: 30%;
+    font-size: 14px;
+  }
+  .card_div {
+    width: 100%;
+  }
+  .new_div {
+    width: 90%;
+  }
+}
