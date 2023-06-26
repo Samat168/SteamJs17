@@ -1,60 +1,23 @@
+import * as React from "react";
+import { useFavorites } from "../../contexts/FavoriteContextProvider";
+import { useEffect } from "react";
 import { Box, Grid, Pagination } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import Navigate from "../Navigator/Navigate";
-import { useProducts } from "../../contexts/ProductContextProvider";
-import ProductCard from "../Product/ProductCard";
-
-const FavoriteProducts = () => {
-  const { getProducts, products, searchParams } = useProducts();
-  const [favoriteProducts, setFavoriteProducts] = useState([]);
+import Button from "@mui/material/Button";
+import { useNavigate } from "react-router-dom";
+export default function FavoriteProducts() {
+  const { favorites, getFavorites, removeFromFavorites } = useFavorites();
 
   useEffect(() => {
-    getProducts();
-    setPage(1);
-  }, [searchParams]);
-
-  useEffect(() => {
-    const favorites = Object.keys(localStorage).filter((key) =>
-      key.startsWith("favorite_")
-    );
-    setFavoriteProducts(favorites);
+    getFavorites();
   }, []);
 
-  // pagination
-  const [page, setPage] = useState(1);
-  const itemsPerPage = 9;
-  const count = Math.ceil(products.length / itemsPerPage);
-
-  const handleChange = (e, p) => {
-    setPage(p);
+  const FavoriteCleaner = () => {
+    localStorage.removeItem("favorites");
+    getFavorites();
   };
-
-  function currentData() {
-    const begin = (page - 1) * itemsPerPage;
-    const end = begin + itemsPerPage;
-    const favoriteData = favoriteProducts
-      .slice(begin, end)
-      .map((key) => JSON.parse(localStorage.getItem(key)));
-
-    return favoriteData.filter((item) =>
-      filteredProducts(activeCategory).includes(item)
-    );
-  }
-
-  // Get unique categories
-  const categories = [...new Set(products.map((item) => item.category))];
-
-  // Filter products by category
-  const filteredProducts = (category) => {
-    return products.filter((item) => item.category === category);
-  };
-
-  const activeCategory = searchParams.get("category");
-
+  const navigate = useNavigate();
   return (
     <Grid item md={9} sx={{ width: "75%", margin: "auto" }}>
-      <Navigate />
       <Box
         sx={{
           display: "grid",
@@ -63,24 +26,27 @@ const FavoriteProducts = () => {
           marginTop: "7%",
         }}
       >
-        {currentData().map((item) => (
-          <ProductCard
-            key={item.id}
-            item={item}
-            isFavorite={favoriteProducts.includes(`favorite_${item.id}`)}
-            sx={{ marginBottom: "20px" }}
-          />
+        {favorites.map((favor) => (
+          <div className="product_card" key={favor.id}>
+            <img
+              className="product_img"
+              src={favor.pic1}
+              alt=""
+              onClick={() => navigate(`/details/${favor.id}`)}
+            />
+            <div className="product_card_bottom">
+              <span className="product_price">${favor.price}</span>
+              <Button
+                sx={{ marginBottom: "8px" }}
+                size="small"
+                onClick={() => removeFromFavorites(favor.id)}
+              >
+                Delete
+              </Button>
+            </div>
+          </div>
         ))}
       </Box>
-      <Pagination
-        sx={{ marginLeft: "45%" }}
-        count={count}
-        page={page}
-        onChange={handleChange}
-        color="primary"
-      />
     </Grid>
   );
-};
-
-export default FavoriteProducts;
+}

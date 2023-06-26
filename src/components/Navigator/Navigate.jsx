@@ -12,7 +12,7 @@ const Navigate = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [search, setSearch] = useState(searchParams.get("q") || "");
   const { cart } = useCart();
-  const { products } = cart;
+  const products = cart ? cart.products : [];
 
   const navigate = useNavigate();
   const [isCategoryOpen, setCategoryOpen] = useState(false);
@@ -77,15 +77,11 @@ const Navigate = () => {
           }}
         >
           <li style={{ color: "white", fontSize: "17px" }}>
-            <Link to={"/products"}>
-              <a>Магазин</a>
-            </Link>
+            <Link to={"/products"}>Магазин</Link>
           </li>
 
           <li style={{ color: "white", fontSize: "17px" }}>
-            <Link to={"/new"}>
-              <a>Новое и интересное</a>
-            </Link>
+            <Link to={"/new"}>Новое и интересное</Link>
           </li>
 
           <li
@@ -162,9 +158,7 @@ const Navigate = () => {
             )}
           </li>
           <li style={{ color: "white", fontSize: "17px" }}>
-            <Link to="/favorite">
-              <a>Избранное</a>
-            </Link>
+            <Link to="/favorite">Избранное</Link>
           </li>
         </ul>
         <div

@@ -6,16 +6,19 @@ import { BrowserRouter } from "react-router-dom";
 import ProductContextProvider from "./contexts/ProductContextProvider";
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import CartContexProvider from "./contexts/CartContextProvider";
+import FavoritesContextProvider from "./contexts/FavoriteContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <AuthContextProvider>
-      <CartContexProvider>
-        <ProductContextProvider>
-          <App />
-        </ProductContextProvider>
-      </CartContexProvider>
-    </AuthContextProvider>
+    <FavoritesContextProvider>
+      <AuthContextProvider>
+        <CartContexProvider>
+          <ProductContextProvider>
+            <App />
+          </ProductContextProvider>
+        </CartContexProvider>
+      </AuthContextProvider>
+    </FavoritesContextProvider>
   </BrowserRouter>
 );
