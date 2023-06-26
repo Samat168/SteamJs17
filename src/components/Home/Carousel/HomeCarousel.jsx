@@ -43,52 +43,25 @@ export default function App({ action, name }) {
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         {action.map((item) => (
           <SwiperSlide
+            style={{ display: "flex", flexDirection: "column" }}
             key={item.id}
-            onClick={() => navigate(`/details/${item.id}`)}
           >
             <Box
               className={"home-slide"}
-              sx={{
-                display: "flex",
-                width: "100%",
-                margin: "0 40px",
-                backgroundColor: "#171a21",
-                overflow: "hidden",
-                borderRadius: "10px",
-              }}
+              onClick={() => navigate(`/details/${item.id}`)}
             >
-              <Box
-                sx={{
-                  width: "65%",
-                  borderRight: "3px solid black",
-                }}
-              >
+              <Box className="home-slide_img">
                 {forVideo ? (
-                  <video controls autoPlay style={{ maxWidth: "100%" }}>
+                  <video controls autoPlay style={{ width: "100%" }}>
                     <source src={video} />
                   </video>
                 ) : (
-                  <img
-                    src={forPic ? mainPic : item.pic1}
-                    alt=""
-                    style={{ maxWidth: "100%" }}
-                  />
+                  <img src={forPic ? mainPic : item.pic1} alt="" />
                 )}
               </Box>
-              <Box sx={{ width: "35%", margin: "5px" }}>
-                <h2
-                  style={{
-                    maxHeight: "62px",
-                    overflow: "hidden",
-                    color: "white",
-                    fontSize: "24px",
-                    margin: "20px",
-                    textAlign: "start",
-                  }}
-                >
-                  {item.title}
-                </h2>
-                <ul style={{ display: "flex", flexWrap: "wrap" }}>
+              <Box className="carousel_name_div">
+                <h2 className="carousel_game_name">{item.title}</h2>
+                <ul className="carousel_images">
                   <li style={{ width: "50%" }}>
                     <img
                       onMouseOver={(e) => changePic(e.target.src)}
@@ -131,11 +104,7 @@ export default function App({ action, name }) {
                   </li>
                 </ul>
 
-                <Box
-                  sx={{
-                    textAlign: "start",
-                  }}
-                >
+                <Box className="carousel_price">
                   <h3 style={{ color: "white", margin: "10px 0" }}>
                     Уже доступно
                   </h3>
@@ -145,6 +114,7 @@ export default function App({ action, name }) {
                 </Box>
               </Box>
             </Box>
+            <h3 className="carousel_adapitve_name">{item.title}</h3>
           </SwiperSlide>
         ))}
       </Swiper>
