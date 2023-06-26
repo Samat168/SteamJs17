@@ -48,3 +48,80 @@ body {
   transform: scale(1.02);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+.carousel_game_name {
+  max-height: 62px;
+  overflow: hidden;
+  color: white;
+  font-size: 24px;
+  margin: 20px;
+  text-align: start;
+}
+.carousel_name_div {
+  width: 35%;
+  margin: 5px;
+}
+.home-slide {
+  display: flex;
+  width: 100%;
+  margin: 0 40px;
+  background-color: #171a21;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.home-slide_img {
+  width: 65%;
+  border-right: 3px solid black;
+}
+.carousel_images {
+  display: flex;
+  flex-wrap: wrap;
+}
+.carousel_price {
+  text-align: start;
+}
+.carousel_adapitve_name {
+  display: none;
+}
+
+/* !Адаптивка */
+@media (max-width: 990px) {
+  .home-slide {
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel_name_div {
+    width: 90%;
+  }
+  .home-slide_img {
+    width: 100%;
+    border: 0;
+  }
+  .carousel_price {
+    text-align: center;
+  }
+
+  .carousel_game_name {
+    font-size: 18px;
+    width: 80%;
+    text-align: center;
+  }
+
+  .home-slide ul {
+    align-items: center;
+  }
+
+  .home-slide ul li {
+    width: 100%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .carousel_name_div {
+    display: none;
+  }
+  .carousel_adapitve_name {
+    display: block;
+    color: rgb(198, 212, 223);
+  }
+}

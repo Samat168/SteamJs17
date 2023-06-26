@@ -5,7 +5,7 @@ import { Button } from "@mui/material";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
 
-const Navigate = (props) => {
+const Navigate = () => {
   const { changeCategory } = useProducts();
   const { catValue, change } = useProducts();
   const [searchParams, setSearchParams] = useSearchParams();
@@ -159,7 +159,9 @@ const Navigate = (props) => {
             )}
           </li>
           <li style={{ color: "white", fontSize: "17px" }}>
-            <a>Избранное</a>
+            <Link>
+              <a>Избранное</a>
+            </Link>
           </li>
         </ul>
         <div

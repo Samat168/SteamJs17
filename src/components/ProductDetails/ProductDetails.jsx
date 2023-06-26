@@ -3,6 +3,8 @@ import { useProducts } from "../../contexts/ProductContextProvider";
 import { useParams } from "react-router-dom";
 import "./ProductDetails.css";
 import Navigate from "../Navigator/Navigate";
+import { useState } from "react";
+import Burger from "../BurgerMenu/Burger";
 
 const ProductDetails = () => {
   const { getProductDetails, productDetails } = useProducts();
@@ -25,9 +27,25 @@ const ProductDetails = () => {
     const options = { year: "numeric", month: "long", day: "numeric" };
     return new Date(date).toLocaleDateString(undefined, options);
   };
+
+  // ! для адаптивки
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+  // ! для адаптивки
   return (
     <div>
-      <Navigate />
+      {windowWidth < 990 ? <Burger /> : <Navigate />}
       <div className="container_details">
         <div className="details_info">
           <p className="detail-info">
