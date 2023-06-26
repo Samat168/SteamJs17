@@ -85,6 +85,10 @@ const AuthContextProvider = ({ children }) => {
     });
   };
 
+
+  const nick = user.email
+  console.log(typeof nick);
+ 
   useEffect(() => {
     authListener();
   }, []);
