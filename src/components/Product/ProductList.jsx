@@ -7,8 +7,8 @@ import { useProducts } from "../../contexts/ProductContextProvider";
 import Navigate from "../Navigator/Navigate";
 
 const ProductList = () => {
-  const { getProducts, products } = useProducts();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const { getProducts, products, searchParams } = useProducts();
+
   useEffect(() => {
     getProducts();
     setPage(1);
@@ -35,7 +35,15 @@ const ProductList = () => {
     return products.slice(begin, end);
   }
 
-  // pagination
+  // Get unique categories
+  const categories = [...new Set(products.map((item) => item.category))];
+
+  // Filter products by category
+  const filteredProducts = (category) => {
+    return products.filter((item) => item.category === category);
+  };
+
+  const activeCategory = searchParams.get("category");
 
   return (
     <Grid item md={9} sx={{ width: "75%", margin: "auto" }}>

@@ -5,11 +5,11 @@ import MainRoutes from "./Routes/MainRoutes";
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <MainRoutes />
       <Footer />
-    </div>
+    </>
   );
 };
 

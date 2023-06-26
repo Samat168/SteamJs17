@@ -2,7 +2,7 @@
   "products": [
     {
       "title": "Call of Duty®: Modern Warfare® II",
-      "desc": "В игре Call of Duty®: Modern Warfare® II игроков ожидает беспрецедентный глобальный конфликт с участием легендарных исполнителей из ОТГ-141.",
+      "desc": "В игре Call of Duty®: Modern Warfare® II игроков ожидает беспрецедентный глобальный конфликт с участием легендарных исполнителей из ОТГ-141. В кампании, рассчитанной на одного игрока, вам предстоит путешествовать по всему миру, выполняя самые разные задания - от небольших, но критически важных тактических ударов до сверхсекретных операций.  Infinity Ward предлагает фанатам ультрасовременную игру с новой механикой применения оружия, передовым ИИ, обновленной системой оружейного тюнинга, а также множеством других передовых решений в области графики и игрового процесса.",
       "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/header.jpg?t=1686759791",
       "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_69daadf0ed608ae40e57c520d60e6d38e14dffe9.600x338.jpg?t=1686759791",
       "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_ecd2d05c58a778031c1533c1356fa63891839e0a.600x338.jpg?t=1686759791",
@@ -36,7 +36,8 @@
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/81958/movie480.webm?t=1554409259",
       "price": 439,
       "category": "Шутеры",
-      "id": 3
+      "id": 3,
+      "releaseDate": "2021-12-05"
     },
     {
       "title": "Forza Horizon 5",
@@ -49,6 +50,18 @@
       "price": 300,
       "category": "Гонки",
       "id": 4
+    },
+    {
+      "title": "PUBG: BATTLEGROUNDS",
+      "desc": "Играйте В PUBG: BATTLEGROUNDS бесплатно. Высаживайтесь в стратегически важных местах, добывайте оружие и припасы и постарайтесь выжить и остаться последней командой на одном из многочисленных полей боя.",
+      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg?t=1684838697",
+      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_0ed7a688a11af33acc56a453d2c8274890cc83db.600x338.jpg?t=1684838697",
+      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_f148e1cd44da2972d1b61da1e12b7b3587c1f6a3.600x338.jpg?t=1684838697",
+      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_c2456a0981b61eca4e84d3ff62fff6c78d61a6d0.600x338.jpg?t=1684838697",
+      "video": "https://cdn.akamai.steamstatic.com/steam/apps/256948448/movie480_vp9.webm?t=1684838689",
+      "price": 100,
+      "category": "Шутеры",
+      "id": 5
     },
     {
       "title": "Grand Theft Auto V",
@@ -109,45 +122,6 @@
       "price": 102,
       "category": "Файтинги",
       "id": 10
-    },
-    {
-      "title": "ывпвп",
-      "desc": "22222",
-      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
-      "pic2": "ыаы",
-      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
-      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/782330/capsule_184x69.jpg?t=1661971606",
-      "video": "ыыыы",
-      "price": 22,
-      "category": "Экшены",
-      "releaseDate": "2004-12-05",
-      "id": 11
-    },
-    {
-      "title": "PUBG: BATTLEGROUNDS",
-      "desc": "Играйте В PUBG: BATTLEGROUNDS бесплатно. Высаживайтесь в стратегически важных местах, добывайте оружие и припасы и постарайтесь выжить и остаться последней командой на одном из многочисленных полей боя.",
-      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/578080/header.jpg?t=1684838697",
-      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_f148e1cd44da2972d1b61da1e12b7b3587c1f6a3.116x65.jpg?t=1684838697",
-      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_c2456a0981b61eca4e84d3ff62fff6c78d61a6d0.600x338.jpg?t=1684838697",
-      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/578080/ss_4bbcaeac1ef977d962c60c1a5e4675cdd81de564.600x338.jpg?t=1684838697",
-      "video": "https://cdn.akamai.steamstatic.com/steam/apps/256948448/movie480_vp9.webm?t=1684838689",
-      "price": 0,
-      "category": "Шутеры",
-      "releaseDate": "2017-12-21",
-      "id": 12
-    },
-    {
-      "title": "Team Fortress 2",
-      "desc": "Девять принципиально различающихся классов дают простор для любых тактик и способностей. В игру постоянно добавляются новые игровые режимы, карты, снаряжение и, самое главное, шляпы!",
-      "pic1": "https://cdn.akamai.steamstatic.com/steam/apps/440/header.jpg?t=1682961494",
-      "pic2": "https://cdn.akamai.steamstatic.com/steam/apps/440/0000002574.600x338.jpg?t=1682961494",
-      "pic3": "https://cdn.akamai.steamstatic.com/steam/apps/440/0000002575.600x338.jpg?t=1682961494",
-      "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/440/0000002577.600x338.jpg?t=1682961494",
-      "video": "https://cdn.akamai.steamstatic.com/steam/apps/256698790/movie480.webm?t=1682961253",
-      "price": 0,
-      "category": "Экшены",
-      "releaseDate": "2007-10-10",
-      "id": 13
     }
   ]
 }
