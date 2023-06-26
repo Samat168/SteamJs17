@@ -45,20 +45,18 @@ export default function App({ action, name }) {
           <SwiperSlide
             style={{ display: "flex", flexDirection: "column" }}
             key={item.id}
-            onClick={() => navigate(`/details/${item.id}`)}
           >
-            <Box className={"home-slide"}>
+            <Box
+              className={"home-slide"}
+              onClick={() => navigate(`/details/${item.id}`)}
+            >
               <Box className="home-slide_img">
                 {forVideo ? (
-                  <video controls autoPlay style={{ maxWidth: "100%" }}>
+                  <video controls autoPlay style={{ width: "100%" }}>
                     <source src={video} />
                   </video>
                 ) : (
-                  <img
-                    src={forPic ? mainPic : item.pic1}
-                    alt=""
-                    style={{ maxWidth: "100%" }}
-                  />
+                  <img src={forPic ? mainPic : item.pic1} alt="" />
                 )}
               </Box>
               <Box className="carousel_name_div">
