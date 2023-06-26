@@ -134,12 +134,15 @@ function Navbar() {
                 display: "flex",
                 justifyContent: "flex-end",
                 width: "8%",
+                marginLeft: {xs:0},
                 marginLeft: "28%",
+                paddingRight: {xs: 2}
               }}
             >
               <Avatar
                 alt="Remy Sharp"
                 src="https://img.freepik.com/free-vector/cute-kitsune-with-sword-cartoon-character-art-object-isolated_138676-3159.jpg"
+                sx={{margin : {xs: 0,}}}
               />
             </IconButton>
           </Tooltip>

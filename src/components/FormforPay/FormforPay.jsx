@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   FormControl,
@@ -46,6 +47,7 @@ const FormforPay = () => {
       !phone.trim()
     ) {
       alert('Заполните все поля!!');
+      
      
       return;
     }

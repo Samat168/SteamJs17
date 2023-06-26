@@ -9,7 +9,7 @@ import Paper from "@mui/material/Paper";
 import { useCart } from "../../contexts/CartContextProvider";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-
+import "./Cart.css";
 function createData(name, calories, fat, carbs, protein) {
   return { name, calories, fat, carbs, protein };
 }
@@ -37,10 +37,15 @@ export default function Cart() {
     <TableContainer
       component={Paper}
       style={{
-        width: "50%",
+        width: "65%",
         marginLeft: "18%",
         backgroundColor: "rgba(0,0,0,0.2)",
         // minHeight: "77px",
+        display: 'flex',
+        flexDirection: 'column',
+        flexWrap: 'wrap'
+
+        
       }}
     >
       <h1 style={{ color: "whitesmoke", margin: " 5% 0 5% 3%" }}>
@@ -48,7 +53,7 @@ export default function Cart() {
       </h1>
       <Table
         sx={{
-          minWidth: 650,
+          // minWidth: 650,
           backgroundColor: "rgba(0,0,0,0.2)",
           minHeight: "77px",
           color: "white",
@@ -57,22 +62,23 @@ export default function Cart() {
         }}
         aria-label="simple table"
       >
-        <TableBody>
+        <TableBody >
           {cart?.products.map((row) => (
             <TableRow
+            className="cart"
               key={row.item.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+             
             >
               <TableCell component="th" scope="row">
-                <img width={80} src={row.item.pic1} alt="" />
+                <img width={150} style={{borderRadius:'10px'}} src={row.item.pic1} alt="" />
               </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
+              <TableCell sx={{ color: "white", display : {xs: 'block'}}} align="rigth">
                 {row.item.title}
               </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
+              <TableCell sx={{ color: "white" , }} align="left">
                 {row.item.category}
               </TableCell>
-              <TableCell sx={{ color: "white" }} align="right">
+              <TableCell sx={{ color: "white", }} align="left">
                 {row.item.price} $
               </TableCell>
               {/* <TableCell align="right">
@@ -86,9 +92,7 @@ export default function Cart() {
                   value={row.count}
                 />
               </TableCell> */}
-              <TableCell sx={{ color: "white" }} align="right">
-                {row.subPrice}
-              </TableCell>
+              
               <TableCell align="right">
                 <button
                   style={{
