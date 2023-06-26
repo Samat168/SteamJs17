@@ -22,11 +22,12 @@
 
 .details_wrapper {
   display: flex;
-  margin-top: 10px;
+  margin-top: 20px;
+  width: 100%;
 }
 
 .block_details_left {
-  width: 62%;
+  width: 65%;
 }
 
 .details_img {
@@ -41,23 +42,27 @@
 }
 
 .img_product {
-  width: 120px;
-  height: 65px;
+  width: 20%;
+  height: 62px;
+}
+
+.details_video {
+  max-width: 100%;
 }
 
 .block_details_right {
-  width: 33%;
+  width: 35%;
   background: -webkit-linear-gradient(
     left,
     rgba(0, 0, 0, 0) 50%,
     rgba(0, 0, 0, 0.4) 100%
   );
-  margin-top: 15px;
+
   margin-left: 2%;
 }
 
 .img_product_right {
-  width: 324px;
+  width: 100%;
 }
 
 .play-icon {
@@ -83,4 +88,99 @@
 
 .date-name {
   color: white;
+}
+
+.product_details_cost {
+  position: relative;
+  margin-top: 10%;
+  width: 100%;
+  background: -webkit-linear-gradient(
+    150deg,
+    rgba(226, 244, 255, 0.3) 5%,
+    rgba(84, 107, 115, 0.3) 95%
+  );
+  background: linear-gradient(
+    -60deg,
+    rgba(226, 244, 255, 0.3) 5%,
+    rgba(84, 107, 115, 0.3) 95%
+  );
+  height: auto;
+  padding: 10px;
+
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product_details_buy {
+  font-size: 21px;
+  font-family: "Motiva Sans", Sans-serif;
+  color: white;
+}
+
+.game_cost {
+  position: absolute;
+  display: flex;
+  left: 66%;
+  top: 83%;
+  align-items: center;
+  width: 18%;
+  background-color: black;
+  height: 34px;
+}
+
+.people-review {
+  color: white;
+  margin-top: 10%;
+}
+
+.price {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  background-color: #000000;
+  color: #c6d4df;
+  font-size: 15px;
+
+  align-items: center;
+  display: flex;
+  max-width: 50%;
+  justify-content: center;
+  flex: 1;
+}
+
+.add-to-cart {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+  background: #6fa720;
+  background: -webkit-linear-gradient(top, #6fa720 5%, #588a1b 95%);
+  background: linear-gradient(to bottom, #6fa720 5%, #588a1b 95%);
+  background: linear-gradient(to right, #75b022 5%, #588a1b 95%);
+  color: #d2efa9;
+  font-size: 15px;
+  border: 1px solid black;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  max-width: 50%;
+  justify-content: center;
+  cursor: pointer;
+  flex: 1;
+}
+
+.remove-to-cart {
+  font-family: "Motiva Sans", Sans-serif;
+  font-weight: normal;
+
+  background: linear-gradient(to right, #23145d 5%, #560b97 95%);
+  color: #cafbf3;
+  font-size: 15px;
+  border: 1px solid black;
+  height: 100%;
+  align-items: center;
+  display: flex;
+  max-width: 50%;
+  justify-content: center;
+  cursor: pointer;
+  flex: 1 1;
 }
