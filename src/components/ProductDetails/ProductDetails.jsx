@@ -8,6 +8,9 @@ import Burger from "../BurgerMenu/Burger";
 import ProductComment from "./ProductComment";
 import ProductCommentList from "./ProductCommentList";
 import WindowIcon from "@mui/icons-material/Window";
+
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
 import { useCart } from "../../contexts/CartContextProvider";
 import { useAuth } from "../../contexts/AuthContextProvider";
 
@@ -16,18 +19,35 @@ const ProductDetails = () => {
   const { getProductDetails, productDetails, updateLikesOnServer } =
     useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
+  const [mainMedia, setMainMedia] = useState(null);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseOver = (media) => {
+    if (!isHovered) {
+      setMainMedia(media);
+    }
+  };
+
+  const handleMouseOut = () => {
+    setIsHovered(false);
+    setMainMedia(null);
+  };
 
   const { id } = useParams();
   const videoRef = useRef(null);
 
   useEffect(() => {
     getProductDetails(id);
-    videoRef.current.src = null;
+    if (videoRef.current) {
+      videoRef.current.src = null;
+    }
   }, []);
 
   useEffect(() => {
     if (productDetails?.video) {
-      videoRef.current.src = productDetails.video;
+      if (videoRef.current) {
+        videoRef.current.src = productDetails.video;
+      }
     }
   }, [productDetails]);
 
@@ -82,15 +102,72 @@ const ProductDetails = () => {
         </div>
         <div className="details_wrapper">
           <div className="block_details_left">
-            <video ref={videoRef} className="details_video" controls autoPlay>
-              <source src={productDetails?.video} type="video/mp4" />
-              Ваш браузер не поддерживает воспроизведение видео.
-            </video>
+            {mainMedia ? (
+              mainMedia.type === "image" ? (
+                <img src={mainMedia.src} alt="" style={{ width: "100%" }} />
+              ) : (
+                <video
+                  ref={videoRef}
+                  controls
+                  autoPlay
+                  style={{ width: "100%", position: "static" }}
+                >
+                  <source src={mainMedia.src} />
+                </video>
+              )
+            ) : (
+              <video
+                ref={videoRef}
+                width="100%"
+                style={{ position: "static" }}
+                controls
+                autoPlay
+                onMouseOver={() =>
+                  handleMouseOver({ type: "video", src: productDetails?.video })
+                }
+                onMouseOut={() => setMainMedia(null)}
+              >
+                <source src={productDetails?.video} type="video/mp4" />
+                Ваш браузер не поддерживает воспроизведение видео.
+              </video>
+            )}
             <div className="details_img">
-              <img className="img_product" src={productDetails?.pic1} alt="" />
-              <img className="img_product" src={productDetails?.pic2} alt="" />
-              <img className="img_product" src={productDetails?.pic3} alt="" />
-              <img className="img_product" src={productDetails?.pic4} alt="" />
+              <img
+                className="img_product"
+                src={productDetails?.pic1}
+                alt=""
+                onMouseOver={() =>
+                  handleMouseOver({ type: "image", src: productDetails?.pic1 })
+                }
+                onMouseOut={() => setMainMedia(null)}
+              />
+              <img
+                className="img_product"
+                src={productDetails?.pic2}
+                alt=""
+                onMouseOver={() =>
+                  handleMouseOver({ type: "image", src: productDetails?.pic2 })
+                }
+                onMouseOut={() => setMainMedia(null)}
+              />
+              <img
+                className="img_product"
+                src={productDetails?.pic3}
+                alt=""
+                onMouseOver={() =>
+                  handleMouseOver({ type: "image", src: productDetails?.pic3 })
+                }
+                onMouseOut={() => setMainMedia(null)}
+              />
+              <img
+                className="img_product"
+                src={productDetails?.pic4}
+                alt=""
+                onMouseOver={() =>
+                  handleMouseOver({ type: "image", src: productDetails?.pic4 })
+                }
+                onMouseOut={() => setMainMedia(null)}
+              />
             </div>
           </div>
 

@@ -6,6 +6,7 @@ import ProductCard from "./ProductCard";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import Navigate from "../Navigator/Navigate";
 import Burger from "../BurgerMenu/Burger";
+import "./ProductList.css";
 
 const ProductList = () => {
   const { getProducts, products, searchParams } = useProducts();
@@ -63,15 +64,33 @@ const ProductList = () => {
   // ! для адаптивки
 
   return (
-    <Grid item md={9} sx={{ width: "75%", margin: "auto" }}>
+    <Grid
+      className="GridList"
+      item
+      md={9}
+      sx={{
+        width: "75%",
+        margin: "auto",
+        "@media (max-width: 990px)": {
+          width: "89%",
+        },
+        "@media (max-width: 716px)": {
+          width: "70%",
+        },
+      }}
+    >
       {windowWidth < 990 ? <Burger /> : <Navigate />}
 
       <Box
+        className="BoxList"
         sx={{
           display: "grid",
           gridTemplateColumns: "repeat(3, 1fr)",
           gap: "20px",
           marginTop: "7%",
+          "@media (max-width: 716px)": {
+            grid: "none",
+          },
         }}
       >
         {currentData().map((item) => (
@@ -83,7 +102,19 @@ const ProductList = () => {
         ))}
       </Box>
       <Pagination
-        sx={{ marginLeft: "45%" }}
+        sx={{
+          marginLeft: "43%",
+          marginTop: "30px",
+          "@media (max-width: 800px)": {
+            marginLeft: "40%",
+          },
+          "@media (max-width: 559px)": {
+            marginLeft: "38%",
+          },
+          "@media (max-width: 420px)": {
+            marginLeft: "25%",
+          },
+        }}
         count={count}
         page={page}
         onChange={handleChange}
