@@ -13,7 +13,8 @@ import { useAuth } from "../../contexts/AuthContextProvider";
 
 import axios from "axios";
 const ProductDetails = () => {
-  const { getProductDetails, productDetails, API } = useProducts();
+  const { getProductDetails, productDetails, updateLikesOnServer } =
+    useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
 
   const { id } = useParams();
@@ -54,20 +55,22 @@ const ProductDetails = () => {
     user: { email },
   } = useAuth();
 
-  const [like, setLike] = useState(productDetails?.like);
+  const [like, setLike] = useState(0);
   const [likeButton, setLikeButton] = useState(false);
-  const incrementLikes = async (val) => {
-    const updatedLike = val ? like + 1 : like - 1;
-    setLike(updatedLike);
-
-    try {
-      const updatedData = { ...productDetails, like: updatedLike };
-      await axios.patch(`${API}/${productDetails.id}`, updatedData);
-    } catch (error) {
-      console.error("Ошибка при обновлении количества лайков:", error);
+  const incrementLikes = (val) => {
+    if (val) {
+      setLike(true);
+    } else {
+      setLike(false);
     }
+    updateLikesOnServer(productDetails, like);
   };
-
+  useEffect(() => {
+    getProductDetails(id);
+  }, [like]);
+  useEffect(() => {
+    setLike(0);
+  }, []);
   return (
     <div className="conter">
       <div className="container_details">
@@ -109,6 +112,14 @@ const ProductDetails = () => {
               {email ? (
                 likeButton ? (
                   <button
+                    style={{
+                      background: "rgb(0, 123, 255)",
+                      color: "#fff",
+                      padding: "8px 16px",
+                      borderRadius: "4px",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
                     onClick={() => {
                       incrementLikes(false);
                       setLikeButton(false);
@@ -118,6 +129,14 @@ const ProductDetails = () => {
                   </button>
                 ) : (
                   <button
+                    style={{
+                      background: "rgb(0, 123, 255)",
+                      color: "#fff",
+                      padding: "8px 16px",
+                      borderRadius: "4px",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
                     onClick={() => {
                       incrementLikes(true);
                       setLikeButton(true);
@@ -127,12 +146,14 @@ const ProductDetails = () => {
                   </button>
                 )
               ) : (
-                <p style={{ color: "rgb(198, 212, 223)" }}>
+                <p style={{ color: "rgb(198, 212, 223)", marginTop: "10px" }}>
                   Зарегистрируйтесь, чтобы оставить отзыв
                 </p>
               )}
 
-              <p>Нравится {like} людям</p>
+              <p style={{ marginTop: "10px" }}>
+                Нравится {productDetails?.like} людям
+              </p>
             </div>
           </div>
         </div>

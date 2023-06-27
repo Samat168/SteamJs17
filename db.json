@@ -9,7 +9,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/1938090/ss_da11f26c8fec6def6e235786e11b868eb8b115ef.116x65.jpg?t=1686759791",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256951745/movie480_vp9.webm?t=1686273391",
       "price": 222,
-      "like": 0,
+      "like": null,
       "category": "Шутеры",
       "id": 1,
       "releaseDate": "2015-05-24"
@@ -23,7 +23,7 @@
       "pic4": "https://cdn.akamai.steamstatic.com/steam/apps/381210/ss_659500624438a4aa77bfdf304cba3ecebcd92ed9.600x338.jpg?t=1687283241",
       "video": "https://cdn.akamai.steamstatic.com/steam/apps/256686761/movie480.webm?t=1683120259",
       "price": 785,
-      "like": 0,
+      "like": 4,
       "category": "Экшены",
       "id": 2,
       "releaseDate": "2020-03-14"
