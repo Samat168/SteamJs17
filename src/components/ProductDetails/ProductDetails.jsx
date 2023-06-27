@@ -12,9 +12,12 @@ import WindowIcon from "@mui/icons-material/Window";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
 import { useCart } from "../../contexts/CartContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
+import axios from "axios";
 const ProductDetails = () => {
-  const { getProductDetails, productDetails } = useProducts();
+  const { getProductDetails, productDetails, updateLikesOnServer } =
+    useProducts();
   const { addProductToCart, checkProductInCart } = useCart();
   const [mainMedia, setMainMedia] = useState(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -68,6 +71,26 @@ const ProductDetails = () => {
     };
   }, []);
   // ! для адаптивки
+  const {
+    user: { email },
+  } = useAuth();
+
+  const [like, setLike] = useState(0);
+  const [likeButton, setLikeButton] = useState(false);
+  const incrementLikes = (val) => {
+    if (val) {
+      setLike(true);
+    } else {
+      setLike(false);
+    }
+    updateLikesOnServer(productDetails, like);
+  };
+  useEffect(() => {
+    getProductDetails(id);
+  }, [like]);
+  useEffect(() => {
+    setLike(0);
+  }, []);
   return (
     <div className="conter">
       <div className="container_details">
@@ -162,8 +185,53 @@ const ProductDetails = () => {
                 {formatReleaseDate(productDetails?.releaseDate)}
               </span>
             </p>
+            <div>
+              {email ? (
+                likeButton ? (
+                  <button
+                    style={{
+                      background: "rgb(0, 123, 255)",
+                      color: "#fff",
+                      padding: "8px 16px",
+                      borderRadius: "4px",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      incrementLikes(false);
+                      setLikeButton(false);
+                    }}
+                  >
+                    Не нравится
+                  </button>
+                ) : (
+                  <button
+                    style={{
+                      background: "rgb(0, 123, 255)",
+                      color: "#fff",
+                      padding: "8px 16px",
+                      borderRadius: "4px",
+                      border: "none",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => {
+                      incrementLikes(true);
+                      setLikeButton(true);
+                    }}
+                  >
+                    Нравится
+                  </button>
+                )
+              ) : (
+                <p style={{ color: "rgb(198, 212, 223)", marginTop: "10px" }}>
+                  Зарегистрируйтесь, чтобы оставить отзыв
+                </p>
+              )}
 
-            <div></div>
+              <p style={{ marginTop: "10px" }}>
+                Нравится {productDetails?.like} людям
+              </p>
+            </div>
           </div>
         </div>
         <div className="product_details_cost">

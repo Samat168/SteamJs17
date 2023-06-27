@@ -13,6 +13,7 @@ const AddProduct = () => {
     pic4: "",
     video: "",
     price: 0,
+    likes: 0,
     category: "",
     releaseDate: "",
   });
@@ -45,6 +46,7 @@ const AddProduct = () => {
       pic4: "",
       video: "",
       price: 0,
+      likes: 0,
       category: "",
     });
   };
