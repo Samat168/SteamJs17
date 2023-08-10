@@ -1,4 +1,4 @@
-export const API = "http://localhost:8000/products";
+export const API = "https://glistening-chaja-a2c32a.netlify.app/db.json";
 
 export const ACTIONS = {
   GET_PRODUCTS: "GET_PRODUCTS",
