@@ -132,6 +132,20 @@
       "like": 0,
       "category": "Файтинги",
       "id": 10
+    },
+    {
+      "title": "ghj",
+      "desc": "ghjk",
+      "pic1": "ygh",
+      "pic2": "gh",
+      "pic3": "gh",
+      "pic4": "gh",
+      "video": "guhij",
+      "price": 22,
+      "likes": 0,
+      "category": "Шутеры",
+      "releaseDate": "28-202-22",
+      "id": 11
     }
   ]
 }

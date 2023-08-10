@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import fire from "../fire";
 import { useNavigate } from "react-router-dom";
+import fire from "../fire";
 
 export const authContext = createContext();
 export const useAuth = () => useContext(authContext);
@@ -85,8 +85,6 @@ const AuthContextProvider = ({ children }) => {
     });
   };
 
-
- 
   useEffect(() => {
     authListener();
   }, []);
